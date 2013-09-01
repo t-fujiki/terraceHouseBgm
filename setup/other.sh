@@ -1,4 +1,4 @@
-db.musics.insert(
+db.videos.insert(
 [
 {
 	artist: 'Taylor Swift',

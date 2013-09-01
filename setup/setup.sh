@@ -1,6 +1,8 @@
 mongo
 use terrace
 
+mongo paulo.mongohq.com:10043/app17861801 -u t-fujiki -p
+
 ■Step from scratch
 
 yo express

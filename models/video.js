@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-NAME_RECORD = 'music';
+NAME_RECORD = 'video';
 
 var schema = new mongoose.Schema({
     artist: {
