@@ -4,7 +4,7 @@
  */
 
 var express = require('express')
-  , music = require('./routes/music')
+  , video = require('./routes/video')
   , http = require('http')
   , path = require('path');
 
@@ -34,7 +34,7 @@ var mongoose = require('mongoose');
 var uri = process.env.MONGOHQ_URL || 'mongodb://localhost/terrace';
 mongoose.connect(uri); 
 
-app.get('/api/music/list', music.list);
+app.get('/api/video/list', video.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

@@ -10,25 +10,46 @@
 	<script type="text/javascript" src="js/vendor/jquery/jquery.js"></script>
 	<script type="text/javascript" src="js/vendor/swfobject.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript">
-var params = { allowScriptAccess: "always" };
-var atts = { id: "player" };
-var url = "http://www.youtube.com/v/WA4iX5D9Z64?enablejsapi=1&playerapiid=ytplayer";
-swfobject.embedSWF(url, "player", "500", "400", "8", null, null, params, atts); 
-</script>
+
+	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
 
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>  
- <div ng-controller="mainCtrl">
- 	<div id="player"></div>
- 	
-    <p>{{users.length}} users.</p>
-    <ul>
-    <li ng-repeat="user in users">
-    {{user.name}} {{user.score}}
-    </li>
-    </ul>    
-    </div>
+	<div ng-controller="mainCtrl">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="./">テラスハウス BGM Player</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav" id="menu">
+						<li><p class="menutitle">ジャンルから選択</p></li>
+						<li><a href="#" id="all">すべて</a></li>
+						<li><a href="#" id="maker">メーカー系</a></li>
+					</ul>
+					<ul class="nav navbar-nav" id="commenu">
+						<li><p class="menutitle">日付から選択</p></li>
+						<li class="padding-15"><select id="companiesArea"></select></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+		<div id="player"></div>
+
+		<p>{{videos.length}} videos.</p>
+		<ul>
+			<li ng-repeat="video in videos">
+				<p>{{video.artist}} {{video.vid}} {{video.date}}</p>
+				<img src="{{video.thumbnail}}" />
+			</li>
+		</ul>    
+	</div><!-- mainCtrl -->
 </body>
