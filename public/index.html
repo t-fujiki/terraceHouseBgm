@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app>
+<head>
+	<meta charset="utf-8">
+	<title>
+		テラスハウスBGMまとめ
+	</title>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<script type="text/javascript" src="js/vendor/angular/angular.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery/jquery.js"></script>
+	<script type="text/javascript" src="js/vendor/swfobject.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+var params = { allowScriptAccess: "always" };
+var atts = { id: "player" };
+var url = "http://www.youtube.com/v/WA4iX5D9Z64?enablejsapi=1&playerapiid=ytplayer";
+swfobject.embedSWF(url, "player", "500", "400", "8", null, null, params, atts); 
+</script>
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>  
+ <div ng-controller="mainCtrl">
+ 	<div id="player"></div>
+ 	
+    <p>{{users.length}} users.</p>
+    <ul>
+    <li ng-repeat="user in users">
+    {{user.name}} {{user.score}}
+    </li>
+    </ul>    
+    </div>
+</body>
