@@ -56,8 +56,8 @@ db.videos.insert(
 {
 	artist: 'Avail',
 	title: 'Santeria',
-	url: 'http://www.youtube.com/watch?feature=player_embedded&v=KeN9c2GYJkk',
-	vid: 'KeN9c2GYJkk',
+	url: 'http://www.youtube.com/watch?feature=player_embedded&v=sHFDBP9VDAg',
+	vid: 'sHFDBP9VDAg',
 	date: ISODate("2013-08-23T00:00:00Z"),
 	category: ''
 },

@@ -33,10 +33,9 @@
 					<ul class="nav navbar-nav" id="menu">
 						<li><p class="menutitle">ジャンルから選択</p></li>
 						<li><a href="#" id="all">すべて</a></li>
-						<li><a href="#" id="maker">メーカー系</a></li>
 					</ul>
 					<ul class="nav navbar-nav" id="commenu">
-						<li><p class="menutitle">日付から選択</p></li>
+						<li><p class="menutitle">放送日時から選択</p></li>
 						<li class="padding-15"><select id="companiesArea"></select></li>
 					</ul>
 				</div><!--/.nav-collapse -->
@@ -47,7 +46,7 @@
 		<p>{{videos.length}} videos.</p>
 		<ul>
 			<li ng-repeat="video in videos">
-				<p>{{video.artist}} {{video.vid}} {{video.date}}</p>
+				<p>{{video.artist}}, {{video.title}}, {{video.date}}</p>
 				<img src="{{video.thumbnail}}" />
 			</li>
 		</ul>    
