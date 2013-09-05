@@ -6,3 +6,24 @@ body {
 a {
   color: #00B7FF;
 }
+
+ul.vertical-slide {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow-y: auto;
+}
+
+ul.vertical-slide li[class*="span"] {
+    display: inline-block;
+    float: none;
+}
+
+ul.vertical-slide li[class*="span"]:first-child {
+    margin-left: 0;
+}
+
+img.videoimg{
+	cursor: pointer;
+}

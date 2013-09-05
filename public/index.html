@@ -18,7 +18,7 @@
 </head>
 
 <body>  
-	<div ng-controller="mainCtrl">
+	<div ng-controller="mainCtrl" id="main" >
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -41,14 +41,17 @@
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>
-		<div id="player"></div>
 
-		<p>{{videos.length}} videos.</p>
-		<ul>
-			<li ng-repeat="video in videos">
-				<p>{{video.artist}}, {{video.title}}, {{video.date}}</p>
-				<img src="{{video.thumbnail}}" />
-			</li>
-		</ul>    
+		<div class="col-xs-6 col-sm-6">
+			<div id="player"></div>
+		</div>    
+		<div class="col-xs-6 col-sm-6">
+			<ul class="vertical-slide">
+				<li ng-repeat="video in videos" class="span2">
+					<p>{{video.artist}}, {{video.title}}, {{video.date}}</p>
+					<img src="{{video.thumbnail}}" ng-click="select($event)" vid="{{video.vid}}" class="videoimg" />
+				</li>
+			</ul>
+		</div>    
 	</div><!-- mainCtrl -->
 </body>
