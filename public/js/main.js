@@ -16,12 +16,12 @@ var mainCtrl = function($scope, $http) {
         var current = 0;
 
         $scope.next = function() {
+            current++;
             if (current < $scope.videos.length) {
                 play($scope.videos[current].vid);
-                current++;
             } else {
                 play($scope.videos[0].vid);
-                current = 1;
+                current = 0;
             }
         };
 
@@ -47,13 +47,16 @@ var mainCtrl = function($scope, $http) {
             }
         }).success(function(data, status, headers, config) {
             $scope.videos = data;
+            var count = 0;
             angular.forEach($scope.videos, function(value, key) {
                 var date = new Date(value.date);
                 value.date = date.toLocaleDateString();
+                value.index = count;
+                count++;
             });
             console.log($scope.videos);
             set($scope.videos[0]);
-            current++;
+            current = 0;;
         }).
         error(function(data, status, headers, config) {
             alert(status);
@@ -62,5 +65,6 @@ var mainCtrl = function($scope, $http) {
         $scope.select = function($event) {
             console.log($event);
             play($event.target.attributes['vid'].value);
+            current = $event.target.attributes['index'].value;
         }
 };

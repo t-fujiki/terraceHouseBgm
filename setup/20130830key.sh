@@ -25,9 +25,41 @@ db.videos.insert(
 }
 ,
 {
-	artist: 'Mat Zo & Porter Robinson',
-	title: 'Easy',
-	vid: '4_5blMi0ve4',
+	artist: 'Rickie-G',
+	title: "Green Green Music Festival¥'08",
+	vid: 'oyRsdpGWzaI',
+	date: ISODate("2013-08-30T09:00:00Z"),
+	category: '',
+}
+,
+{
+	artist: 'Snow Patrol',
+	title: "You're All I Have",
+	vid: 'C8AQPGKcZOk',
+	date: ISODate("2013-08-30T09:00:00Z"),
+	category: '',
+}
+,
+{
+	artist: 'クラムボン×石垣島',
+	title: '波よせて',
+	vid: 'ybUQwQuX3II',
+	date: ISODate("2013-08-30T09:00:00Z"),
+	category: '',
+}
+,
+{
+	artist: 'DJ Jazzy Jeff & The Fresh Prince',
+	title: 'Summertime',
+	vid: 'Kr0tTbTbmVA',
+	date: ISODate("2013-08-30T09:00:00Z"),
+	category: '',
+}
+,
+{
+	artist: 'John Butler Trio',
+	title: 'One Way Road',
+	vid: 'n5f3gfFtHY8',
 	date: ISODate("2013-08-30T09:00:00Z"),
 	category: '',
 }
