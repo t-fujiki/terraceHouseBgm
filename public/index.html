@@ -48,10 +48,13 @@
 		<div class="col-xs-6 col-sm-6">
 			<ul class="vertical-slide">
 				<li ng-repeat="video in videos" class="span2">
-					<p>{{video.artist}}, {{video.title}}, {{video.date}}</p>
+					<p>Artist: {{video.artist}}</p>
+					<p>Title: {{video.title}}</p>
+					<p>放送日時: {{video.date}}</p>
 					<img src="{{video.thumbnail}}" ng-click="select($event)" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
 				</li>
 			</ul>
 		</div>    
+</div>
 	</div><!-- mainCtrl -->
 </body>

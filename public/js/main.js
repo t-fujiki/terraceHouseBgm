@@ -43,7 +43,7 @@ var mainCtrl = function($scope, $http) {
 
         $http.get('/api/video/list', {
             params: {
-                limit: 20
+                limit: 100
             }
         }).success(function(data, status, headers, config) {
             $scope.videos = data;
