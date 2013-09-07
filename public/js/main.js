@@ -1,8 +1,7 @@
-
 function playerState(state) {
     console.log(state);
     if (state == 0) {
-    	var scope = angular.element($('#main')).scope().next();
+        var scope = angular.element($('#main')).scope().next();
     }
 }
 
@@ -14,14 +13,22 @@ function onYouTubePlayerReady(playerId) {
 
 var mainCtrl = function($scope, $http) {
         var current = 0;
+        $scope.isRandom = true;
 
         $scope.next = function() {
-            current++;
-            if (current < $scope.videos.length) {
-                play($scope.videos[current].vid);
+            if ($scope.isRandom == true) {
+                var nextIndex = 0;
+                nextIndex = Math.floor(Math.random() * $scope.videos.length + 1);
+                play($scope.videos[nextIndex].vid);
+                current = nextIndex;
             } else {
-                play($scope.videos[0].vid);
-                current = 0;
+                current++;
+                if (current < $scope.videos.length) {
+                    play($scope.videos[current].vid);
+                } else {
+                    play($scope.videos[0].vid);
+                    current = 0;
+                }
             }
         };
 
@@ -55,10 +62,25 @@ var mainCtrl = function($scope, $http) {
                 count++;
             });
             console.log($scope.videos);
-            set($scope.videos[0]);
-            current = 0;;
+
+            var nextIndex = 0;
+            if ($scope.isRandom == true) {
+                nextIndex = Math.floor(Math.random() * $scope.videos.length + 1);
+            }
+            set($scope.videos[nextIndex]);
+            current = nextIndex;
         }).
         error(function(data, status, headers, config) {
+            alert(status);
+        });
+
+        $http.get('/api/video/date', {}).success(function(data, status, headers, config) {
+            $scope.dates = [];
+            angular.forEach(data, function(value, key) {
+                var date = new Date(value);
+                $scope.dates.push(date.toLocaleDateString());
+            });
+        }).error(function(data, status, headers, config) {
             alert(status);
         });
 
@@ -67,4 +89,4 @@ var mainCtrl = function($scope, $http) {
             play($event.target.attributes['vid'].value);
             current = $event.target.attributes['index'].value;
         }
-};
+    };

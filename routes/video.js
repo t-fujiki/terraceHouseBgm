@@ -76,6 +76,18 @@ function findVideos(condition, req, res) {
     console.log('[OUT]findVideos');
 }
 
+function findDate(req, res) {
+    console.log('findDate');
+
+    Video.distinct("date").exec(function(err, result) {
+            if (!err) {
+                console.log('success to get date. = ' + result);
+                res.send(result);
+            } else {
+                console.log('fail to get date.');
+            }
+        });
+}
 
 exports.list = function(req, res) {
     var condition = {};
@@ -86,4 +98,8 @@ exports.list = function(req, res) {
         };
     }
     findVideos(condition, req, res);
+};
+
+exports.date = function(req, res){
+    findDate(req, res);
 };

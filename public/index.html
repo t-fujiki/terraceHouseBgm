@@ -49,7 +49,14 @@
 					</ul>
 					<ul class="nav navbar-nav" id="commenu">
 						<li><p class="menutitle">放送日時から選択</p></li>
-						<li class="padding-15"><select id="companiesArea"></select></li>
+						<li class="padding-15">
+							<select id="companiesArea">
+								<option ng-repeat="date in dates">{{date}}</option>
+							</select>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav">
+						<li><p>ランダム再生する: <input type="checkbox" ng-model="isRandom"></p></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
@@ -60,7 +67,7 @@
                 <a href="http://b.hatena.ne.jp/entry/http://terracehousebgm.herokuapp.com/" class="hatena-bookmark-button" data-hatena-bookmark-title="テラスハウス BGM Player" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
                 <div class="fb-like" data-href="http://terracehousebgm.herokuapp.com/http://terracehousebgm.herokuapp.com/" data-width="450" data-layout="button_count" data-show-faces="false" data-send="false"></div>
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 <!--                 <button type="button" class="btn" href="#addForm" data-toggle="modal">エントリを追加</button>
  -->            </div>
         </div>

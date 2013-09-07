@@ -35,6 +35,7 @@ var uri = process.env.MONGOHQ_URL || 'mongodb://localhost/terrace';
 mongoose.connect(uri); 
 
 app.get('/api/video/list', video.list);
+app.get('/api/video/date', video.date);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
