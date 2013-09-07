@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja" ng-app>
 <head>
-	<meta charset="utf-8">
-	<title>
-		テラスハウスBGMまとめ
-	</title>
+    <meta property="og:title" content="退職系エントリまとめ">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="最近よくみる退職・転職に関するエントリをまとめてみました。">
+    <meta property="og:url" content="http://resignentry.herokuapp.com/">
+    <meta property="og:site_name" content="退職系エントリまとめ">
+    <meta charset="utf-8">
+    <meta name="description" content="最近よくみる退職・転職に関するエントリをまとめてみました。">
+    <meta name="keywords" content="テラスハウス,BGM,TerraceHouse,シェアハウス">
+	<title>テラスハウス BGM Player</title>
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<script type="text/javascript" src="js/vendor/angular/angular.js"></script>
 	<script type="text/javascript" src="js/vendor/jquery/jquery.js"></script>
@@ -18,6 +23,14 @@
 </head>
 
 <body>  
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=294469960695965";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 	<div ng-controller="mainCtrl" id="main" >
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
@@ -41,20 +54,37 @@
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>
-
-		<div class="col-xs-6 col-sm-6">
-			<div id="player"></div>
-		</div>    
-		<div class="col-xs-6 col-sm-6">
-			<ul class="vertical-slide">
-				<li ng-repeat="video in videos" class="span2">
-					<p>Artist: {{video.artist}}</p>
-					<p>Title: {{video.title}}</p>
-					<p>放送日時: {{video.date}}</p>
-					<img src="{{video.thumbnail}}" ng-click="select($event)" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
-				</li>
-			</ul>
-		</div>    
-</div>
-	</div><!-- mainCtrl -->
+        <div class="row">
+            <div class="page-header">
+            	フジテレビ系列で放送されている「テラスハウス」の BGM を再生する Player を作ってみました。
+                <a href="http://b.hatena.ne.jp/entry/http://terracehousebgm.herokuapp.com/" class="hatena-bookmark-button" data-hatena-bookmark-title="テラスハウス BGM Player" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+                <div class="fb-like" data-href="http://terracehousebgm.herokuapp.com/http://terracehousebgm.herokuapp.com/" data-width="450" data-layout="button_count" data-show-faces="false" data-send="false"></div>
+<!--                 <button type="button" class="btn" href="#addForm" data-toggle="modal">エントリを追加</button>
+ -->            </div>
+        </div>
+   		<div class="row upperview">
+			<div class="col-xs-6 col-sm-6">
+				<div id="player"></div>
+			</div>    
+			<div class="col-xs-6 col-sm-6">
+				<div>
+				</div>
+				<div id="amazon"></div>
+			</div>    
+		</div>
+   		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<ul class="vertical-slide">
+					<li ng-repeat="video in videos" class="span2">
+						<p>{{video.artist}}</p>
+						<p>「{{video.title}}」</p>
+						<p>放送日時: {{video.date}}</p>
+						<img src="{{video.thumbnail}}" ng-click="select($event)" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
+					</li>
+				</ul>
+			</div>    
+		</div>
+	</div>
+</div><!-- mainCtrl -->
+<script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 </body>

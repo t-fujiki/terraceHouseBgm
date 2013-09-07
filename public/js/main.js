@@ -38,7 +38,7 @@ var mainCtrl = function($scope, $http) {
                 id: "player"
             };
 
-            swfobject.embedSWF("http://www.youtube.com/v/" + video.vid + "?enablejsapi=1&playerapiid=ytplayer", "player", "500", "400", "8", null, null, params, atts);
+            swfobject.embedSWF("http://www.youtube.com/v/" + video.vid + "?enablejsapi=1&playerapiid=ytplayer", "player", "400", "300", "8", null, null, params, atts);
         }
 
         $http.get('/api/video/list', {

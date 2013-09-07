@@ -7,6 +7,14 @@ a {
   color: #00B7FF;
 }
 
+#player{
+	/*margin:0 auto 0 auto;*/
+}
+
+.videoimg{
+	height: 200px;
+}
+
 ul.vertical-slide {
     margin: 0;
     padding: 0;
