@@ -11,7 +11,7 @@ db.videos.update({_id:ObjectId("52236915a445eaae398d06d5")},{$set: {vid: "sHFDBP
 yo express
 npm install mongoose --save
 
-bower angular jquery --save
+bower install angular --save
 bower install jquery --save
 
 
