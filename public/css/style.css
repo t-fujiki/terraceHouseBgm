@@ -7,9 +7,16 @@ a {
   color: #00B7FF;
 }
 
-.upperview{
-	align: center;
+.page-header{
+	margin: 20px 0 20px;
 	/*margin:0 auto 0 auto;*/
+}
+
+.social-button-hatena{
+  width: 80px;
+}
+
+.social-button-twitter{
 }
 
 .videoimg{
