@@ -7,6 +7,15 @@ function dump(v) {
     return console.log(util.inspect(v));
 }
 
+function toLocaleString( date )
+{
+    return [
+        date.getFullYear(),
+        date.getMonth() + 1,
+        date.getDate()
+        ].join( '/' );
+}
+
 function findVideos(condition, req, res) {
     console.log('[IN]findVideos');
     var offset = req.query.offset || 0;
@@ -87,10 +96,11 @@ function findDate(req, res) {
                 var dateArray = new Array();
                 result.forEach(function(date) {
                     var date = new Date(date);
-                    dateArray.push(date);
+                    dateArray.push(toLocaleString(date));
                 });
                 console.log('Before:' + dateArray);
                 dateArray.sort();
+                dateArray.reverse();
                 console.log('After:' + dateArray);
                 res.send(dateArray);
             } else {
