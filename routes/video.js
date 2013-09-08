@@ -9,10 +9,12 @@ function dump(v) {
 
 function toLocaleString( date )
 {
+    var month = "0" + (date.getMonth() + 1);
+    var day = "0" + date.getDate();
     return [
         date.getFullYear(),
-        date.getMonth() + 1,
-        date.getDate()
+        month.substr(month.length - 2),
+        day.substr(day.length - 2)
         ].join( '/' );
 }
 
