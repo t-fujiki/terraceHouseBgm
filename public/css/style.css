@@ -16,13 +16,17 @@ a {
   float: left;
 }
 
+.playerwindow object{
+  margin: 0 auto;
+}
+
 .button_google{
   float: left;
   width: 80px;
 }
 
 .twitter-share-button{
-width: 120px !important;
+  width: 120px !important;
 }
 
 .videoimg{

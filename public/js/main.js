@@ -1,6 +1,6 @@
 function playerState(state) {
     console.log(state);
-    if (state == 0) {
+    if (state == 0) { // play completed
         var scope = angular.element($('#main')).scope().next();
     }
 }
@@ -14,27 +14,29 @@ function onYouTubePlayerReady(playerId) {
 var mainCtrl = function($scope, $http) {
         var current = 0;
         $scope.isRandom = true;
+        $scope.currentVideo;
 
         $scope.next = function() {
             if ($scope.isRandom == true) {
                 var nextIndex = 0;
                 nextIndex = Math.floor(Math.random() * $scope.videos.length + 1);
-                play($scope.videos[nextIndex].vid);
+                play($scope.videos[nextIndex]);
                 current = nextIndex;
             } else {
                 current++;
                 if (current < $scope.videos.length) {
-                    play($scope.videos[current].vid);
+                    play($scope.videos[current]);
                 } else {
-                    play($scope.videos[0].vid);
+                    play($scope.videos[0]);
                     current = 0;
                 }
             }
         };
 
-        function play(vid) {
+        function play(video) {
             var player = document.getElementById('player');
-            player.loadVideoById(vid);
+            $scope.currentVideo = video;
+            player.loadVideoById(video.vid);
         }
 
         function set(video) {
@@ -45,6 +47,7 @@ var mainCtrl = function($scope, $http) {
                 id: "player"
             };
 
+            $scope.currentVideo = video;
             swfobject.embedSWF("http://www.youtube.com/v/" + video.vid + "?enablejsapi=1&playerapiid=ytplayer", "player", "400", "300", "8", null, null, params, atts);
         }
 
@@ -86,7 +89,7 @@ var mainCtrl = function($scope, $http) {
 
         $scope.select = function($event) {
             console.log($event);
-            play($event.target.attributes['vid'].value);
+            play($scope.videos[$event.target.attributes['index'].value]);
             current = $event.target.attributes['index'].value;
         }
     };
