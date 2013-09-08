@@ -18,8 +18,8 @@
 	<script type="text/javascript" src="js/vendor/swfobject.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
-	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
 
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -34,7 +34,7 @@
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 	<div ng-controller="mainCtrl" id="main" >
-		<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar navbar-inner navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -58,7 +58,7 @@
 						</li>
 					</ul>
 					<ul class="nav navbar-nav">
-						<li><p>ランダム再生する: <input type="checkbox" ng-model="isRandom"></p></li>
+						<li class="padding-15"><p>ランダム再生する: <input type="checkbox" ng-model="isRandom"></p></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
@@ -79,7 +79,11 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 playerwindow">
-				<center><div id="player"></div></center>
+				<center>
+					<span class="glyphicon glyphicon-step-backward player-controller" ng-click="backward($event)"></span>
+					<div id="player"></div>
+					<span class="glyphicon glyphicon-step-forward player-controller" ng-click="forward($event)"></span>
+				</center>
 			</div>    
 			<div class="col-xs-6 col-sm-6">
 				<div id="amazon">

@@ -14,22 +14,47 @@ function onYouTubePlayerReady(playerId) {
 var mainCtrl = function($scope, $http) {
         var current = 0;
         $scope.isRandom = true;
-        $scope.currentVideo;
 
         $scope.next = function() {
             if ($scope.isRandom == true) {
-                var nextIndex = 0;
-                nextIndex = Math.floor(Math.random() * $scope.videos.length + 1);
-                play($scope.videos[nextIndex]);
-                current = nextIndex;
+                playRandom();
             } else {
-                current++;
-                if (current < $scope.videos.length) {
-                    play($scope.videos[current]);
-                } else {
-                    play($scope.videos[0]);
-                    current = 0;
-                }
+                playNext();
+            }
+        };
+
+        $scope.prev = function() {
+            if ($scope.isRandom == true) {
+                playRandom();
+            } else {
+                playPrev();
+            }
+        };
+
+        playRandom = function(){
+            var nextIndex = 0;
+            nextIndex = Math.floor(Math.random() * $scope.videos.length + 1);
+            play($scope.videos[nextIndex]);
+            current = nextIndex;
+        };
+
+        playNext = function() {
+            current++;
+            if (current < $scope.videos.length) {
+                play($scope.videos[current]);
+            } else {
+                play($scope.videos[0]);
+                current = 0;
+            }
+        };
+
+        playPrev = function() {
+            current--;
+            if (0 <= current) {
+                play($scope.videos[current]);
+            } else {
+                play($scope.videos[$scope.videos.length - 1]);
+                current = $scope.videos.length - 1;
             }
         };
 
@@ -91,5 +116,13 @@ var mainCtrl = function($scope, $http) {
             console.log($event);
             play($scope.videos[$event.target.attributes['index'].value]);
             current = $event.target.attributes['index'].value;
+        }
+
+        $scope.forward = function($event) {
+            $scope.next();
+        }
+
+        $scope.backward = function($event) {
+            $scope.prev();
         }
     };

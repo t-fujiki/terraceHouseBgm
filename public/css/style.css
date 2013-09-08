@@ -3,8 +3,16 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.navbar-inner {
+  background-color: #DDDDDD; /* fallback color, place your own */
+}
+
+.a{
+  color: #888888;
+}
+
+.menutitle{
+  color: #888888;
 }
 
 .page-header{
@@ -27,6 +35,11 @@ a {
 
 .twitter-share-button{
   width: 120px !important;
+}
+
+.player-controller{
+    cursor: pointer;
+    font-size: 24px;
 }
 
 .videoimg{
@@ -52,4 +65,9 @@ ul.vertical-slide li[class*="span"]:first-child {
 
 img.videoimg{
 	cursor: pointer;
+}
+
+.navbar-nav>li.padding-15 {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }

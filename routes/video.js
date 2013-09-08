@@ -77,9 +77,11 @@ function findVideos(condition, req, res) {
 }
 
 function findDate(req, res) {
-    console.log('findDate');
+    console.log('[IN]findDate');
 
-    Video.distinct("date").exec(function(err, result) {
+    Video.distinct("date").sort({
+        date: 1
+    }).exec(function(err, result) {
             if (!err) {
                 console.log('success to get date. = ' + result);
                 res.send(result);
@@ -87,6 +89,7 @@ function findDate(req, res) {
                 console.log('fail to get date.');
             }
         });
+    console.log('[OUT]findDate');
 }
 
 exports.list = function(req, res) {
