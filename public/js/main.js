@@ -65,7 +65,7 @@ var mainCtrl = function($scope, $http) {
 
             var nextIndex = 0;
             if ($scope.isRandom == true) {
-                nextIndex = Math.floor(Math.random() * $scope.videos.length + 1);
+                nextIndex = Math.floor(Math.random() * $scope.videos.length);
             }
             set($scope.videos[nextIndex]);
             current = nextIndex;

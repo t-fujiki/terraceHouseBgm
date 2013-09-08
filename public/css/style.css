@@ -12,11 +12,17 @@ a {
 	/*margin:0 auto 0 auto;*/
 }
 
-.social-button-hatena{
+.header-description{
+  float: left;
+}
+
+.button_google{
+  float: left;
   width: 80px;
 }
 
-.social-button-twitter{
+.twitter-share-button{
+width: 120px !important;
 }
 
 .videoimg{
