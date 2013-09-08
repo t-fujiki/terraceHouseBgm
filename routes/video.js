@@ -10,7 +10,7 @@ function dump(v) {
 function findVideos(condition, req, res) {
     console.log('[IN]findVideos');
     var offset = req.query.offset || 0;
-    var limit = req.query.limit || 6;
+    var limit = req.query.limit || 200;
     var order = req.query.order || -1;
     console.log('offset = ' + offset + ', limit = ' + limit);
 
@@ -84,7 +84,15 @@ function findDate(req, res) {
     }).exec(function(err, result) {
             if (!err) {
                 console.log('success to get date. = ' + result);
-                res.send(result);
+                var dateArray = new Array();
+                result.forEach(function(date) {
+                    var date = new Date(date);
+                    dateArray.push(date);
+                });
+                console.log('Before:' + dateArray);
+                dateArray.sort();
+                console.log('After:' + dateArray);
+                res.send(dateArray);
             } else {
                 console.log('fail to get date.');
             }
@@ -96,8 +104,14 @@ exports.list = function(req, res) {
     var condition = {};
     var date = req.query.date;
     if (date) {
+        var gt_date = new Date(date);
+        var lt_date = new Date(date);
+        gt_date.setDate(gt_date.getDate() - 1); 
+        lt_date.setDate(lt_date.getDate() + 1); 
+        console.log('date:' + date + ',gt_date:' + gt_date + ',lt_date:' + lt_date);
         condition.date = {
-            $in: [date]
+            $gte: gt_date,
+            $lt: lt_date
         };
     }
     findVideos(condition, req, res);

@@ -8,6 +8,7 @@
 	<meta property="og:site_name" content="テラスハウス BGM Player">
 	<meta property="og:image" content="http://www.fujitv.co.jp/b_hp/terrace-house/img/logo.gif">
 	<meta property="fb:app_id" content="294469960695965" />
+	<meta property="fb:admins" content="1668055849"/>
 	<meta charset="utf-8">
 	<meta name="description" content="素敵な曲ばかりのテラスハウスBGMを連続再生できます">
 	<meta name="keywords" content="テラスハウス,BGM,TerraceHouse,シェアハウス,音楽">
@@ -52,8 +53,8 @@
 					<ul class="nav navbar-nav" id="commenu">
 						<li><p class="menutitle">放送日時から選択</p></li>
 						<li class="padding-15">
-							<select id="companiesArea">
-								<option ng-repeat="date in dates">{{date}}</option>
+							<select id="date-area" ng-model="date" ng-options="date for date in dates" ng-change="dateSelected($date)">
+								<option value="">-- choose date --</option>
 							</select>
 						</li>
 					</ul>
