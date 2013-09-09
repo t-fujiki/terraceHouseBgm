@@ -1,5 +1,5 @@
 function playerState(state) {
-    console.log(state);
+    // console.log(state);
     if (state == 0) { // play completed
         var scope = angular.element($('#main')).scope().next();
     }
@@ -88,7 +88,7 @@ var mainCtrl = function($scope, $http) {
                     value.index = count;
                     count++;
                 });
-                console.log($scope.videos);
+                // console.log($scope.videos);
 
                 var nextIndex = 0;
                 if ($scope.isRandom == true) {
@@ -116,12 +116,12 @@ var mainCtrl = function($scope, $http) {
         });
 
         $scope.dateSelected = function($date) {
-            console.log($scope.date);
+            // console.log($scope.date);
             setup({date: $scope.date});
         }
 
         $scope.select = function($event) {
-            console.log($event);
+            // console.log($event);
             play($scope.videos[$event.target.attributes['index'].value]);
             current = $event.target.attributes['index'].value;
         }
