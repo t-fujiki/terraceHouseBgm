@@ -50,13 +50,13 @@
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav" id="menu">
 						<li><p class="menutitle">ジャンルから選択</p></li>
-						<li><a href="#" id="all">すべて</a></li>
+						<li><a href="#" id="all" ng-click="showall($event)">すべて</a></li>
 					</ul>
 					<ul class="nav navbar-nav" id="commenu">
 						<li><p class="menutitle">放送日時から選択</p></li>
 						<li class="padding-15">
 							<select id="date-area" ng-model="date" ng-options="date for date in dates" ng-change="dateSelected($date)">
-								<option value="">-- choose date --</option>
+								<option value="all">-- choose date --</option>
 							</select>
 						</li>
 					</ul>

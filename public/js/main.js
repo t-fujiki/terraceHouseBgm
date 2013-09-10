@@ -115,9 +115,20 @@ var mainCtrl = function($scope, $http) {
             alert(status);
         });
 
+        $scope.showall = function($event) {
+            setup();
+        }
+
         $scope.dateSelected = function($date) {
-            // console.log($scope.date);
-            setup({date: $scope.date});
+            console.log($scope.date);
+
+            var condition = {limit: 10};
+
+            if($scope.date != 'all'){
+                condition.date = $scope.date;
+            }
+
+            setup(condition);
         }
 
         $scope.select = function($event) {

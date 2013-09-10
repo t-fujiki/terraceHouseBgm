@@ -33,9 +33,9 @@
 }
 ,
 {
-	artist: "BECK",
-	title: "キュー・オンダ・グエロ",
-	vid: "RxpvZTVIOs",
+	artist: "Beck",
+	title: "Que Onda Guero",
+	vid: "-RxpvZTVIOs",
 	date: ISODate("2012-11-02T09:00:00Z"),
 	category: "",
 }
