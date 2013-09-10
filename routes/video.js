@@ -29,7 +29,7 @@ function findVideos(condition, req, res) {
             console.log('success to get videos. = ' + result);
             // load additonal data
             result.forEach((function(video) {
-                if (video.last_updated_date == null) {
+                if (video.thumbnail == undefined) {
                     console.log('get original data, id = ' + video.vid);
                     var req = http.get({ // (1)
                         host: 'gdata.youtube.com',
@@ -40,6 +40,8 @@ function findVideos(condition, req, res) {
                             body += data.toString();
                         });
                         res.on('end', function() {
+                            console.log('get original data, id = ' + video.vid + ', body =' + body);
+
                             recent = JSON.parse(body);
                             video.original_title = recent.entry.title.$t;
                             video.url = recent.entry.media$group.media$player[0].url;
