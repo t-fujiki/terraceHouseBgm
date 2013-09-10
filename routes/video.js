@@ -7,21 +7,17 @@ function dump(v) {
     return console.log(util.inspect(v));
 }
 
-function toLocaleString( date )
-{
+function toLocaleString(date) {
     var month = "0" + (date.getMonth() + 1);
     var day = "0" + date.getDate();
     return [
-        date.getFullYear(),
-        month.substr(month.length - 2),
-        day.substr(day.length - 2)
-        ].join( '/' );
+    date.getFullYear(), month.substr(month.length - 2), day.substr(day.length - 2)].join('/');
 }
 
 function findVideos(condition, req, res) {
     console.log('[IN]findVideos');
     var offset = req.query.offset || 0;
-    var limit = req.query.limit || 200;
+    var limit = req.query.limit || 500;
     var order = req.query.order || -1;
     console.log('offset = ' + offset + ', limit = ' + limit);
 
@@ -35,7 +31,7 @@ function findVideos(condition, req, res) {
             result.forEach((function(video) {
                 if (video.last_updated_date == null) {
                     console.log('get original data, id = ' + video.vid);
-                    http.get({ // (1)
+                    var req = http.get({ // (1)
                         host: 'gdata.youtube.com',
                         path: '/feeds/api/videos/' + video.vid + '?alt=json'
                     }, function(res) {
@@ -60,8 +56,7 @@ function findVideos(condition, req, res) {
                                     url: newVideo.url,
                                     thumbnail: newVideo.thumbnail
                                 }
-                            }, 
-                            {
+                            }, {
                                 upsert: true
                             }, function(err) {
                                 if (!err) {
@@ -71,6 +66,12 @@ function findVideos(condition, req, res) {
                                 }
                             });
                         });
+                    });
+
+                    // error handler
+                    req.on('error', function(err) {
+                        console.log("Error: " + err.message);
+                        dump(video);
                     });
                 } else {
                     console.log('data is up-to-date, id = ' + video.vid);
@@ -93,22 +94,22 @@ function findDate(req, res) {
     Video.distinct("date").sort({
         date: 1
     }).exec(function(err, result) {
-            if (!err) {
-                console.log('success to get date. = ' + result);
-                var dateArray = new Array();
-                result.forEach(function(date) {
-                    var date = new Date(date);
-                    dateArray.push(toLocaleString(date));
-                });
-                console.log('Before:' + dateArray);
-                dateArray.sort();
-                dateArray.reverse();
-                console.log('After:' + dateArray);
-                res.send(dateArray);
-            } else {
-                console.log('fail to get date.');
-            }
-        });
+        if (!err) {
+            console.log('success to get date. = ' + result);
+            var dateArray = new Array();
+            result.forEach(function(date) {
+                var date = new Date(date);
+                dateArray.push(toLocaleString(date));
+            });
+            console.log('Before:' + dateArray);
+            dateArray.sort();
+            dateArray.reverse();
+            console.log('After:' + dateArray);
+            res.send(dateArray);
+        } else {
+            console.log('fail to get date.');
+        }
+    });
     console.log('[OUT]findDate');
 }
 
@@ -118,8 +119,8 @@ exports.list = function(req, res) {
     if (date) {
         var gt_date = new Date(date);
         var lt_date = new Date(date);
-        gt_date.setDate(gt_date.getDate() - 1); 
-        lt_date.setDate(lt_date.getDate() + 1); 
+        gt_date.setDate(gt_date.getDate() - 1);
+        lt_date.setDate(lt_date.getDate() + 1);
         console.log('date:' + date + ',gt_date:' + gt_date + ',lt_date:' + lt_date);
         condition.date = {
             $gte: gt_date,
@@ -129,6 +130,6 @@ exports.list = function(req, res) {
     findVideos(condition, req, res);
 };
 
-exports.date = function(req, res){
+exports.date = function(req, res) {
     findDate(req, res);
 };
