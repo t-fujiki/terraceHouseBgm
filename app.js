@@ -30,6 +30,11 @@ app.get('/', function(req, res) {
     res.sendfile(path.join(__dirname, 'public') + '/index.html');
 });
 
+app.get('/google6545b9b2dd775c84.html', function(req, res) {
+    res.sendfile(path.join(__dirname, 'public') + '/google6545b9b2dd775c84.html');
+});
+
+
 var mongoose = require('mongoose');
 var uri = process.env.MONGOHQ_URL || 'mongodb://localhost/terrace';
 mongoose.connect(uri); 
