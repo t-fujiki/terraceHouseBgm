@@ -11,7 +11,7 @@ function toLocaleString(date) {
     var month = "0" + (date.getMonth() + 1);
     var day = "0" + date.getDate();
     return [
-    date.getFullYear(), month.substr(month.length - 2), day.substr(day.length - 2)].join('/');
+    date.getFullYear(), month.substr(month.length - 2), day.substr(day.length - 2)].join('-');
 }
 
 function findVideos(condition, req, res) {
@@ -31,6 +31,7 @@ function findVideos(condition, req, res) {
             result.forEach((function(video) {
                 if (video.thumbnail == undefined) {
                     console.log('get original data, id = ' + video.vid);
+                    dump(video);
                     var req = http.get({ // (1)
                         host: 'gdata.youtube.com',
                         path: '/feeds/api/videos/' + video.vid + '?alt=json'
@@ -97,22 +98,57 @@ function findDate(req, res) {
         date: 1
     }).exec(function(err, result) {
         if (!err) {
-            console.log('success to get date. = ' + result);
+            // console.log('success to get date. = ' + result);
             var dateArray = new Array();
             result.forEach(function(date) {
                 var date = new Date(date);
                 dateArray.push(toLocaleString(date));
             });
-            console.log('Before:' + dateArray);
+            // console.log('Before:' + dateArray);
             dateArray.sort();
             dateArray.reverse();
-            console.log('After:' + dateArray);
+            // console.log('After:' + dateArray);
             res.send(dateArray);
         } else {
             console.log('fail to get date.');
         }
     });
     console.log('[OUT]findDate');
+}
+
+function update(req, res) {
+    console.log('[IN]update, id = ' + req.params.id);
+
+    Video.update({
+        _id: req.params.id
+    }, {
+        $inc: {
+            count: 1
+        }
+    }, {
+        upsert: false
+    }, function(err, numberAffected, raw) {
+        if (!err) {
+            console.log(req.params.id + ":");
+            dump(raw);
+            Video.find({_id: req.params.id})
+            .exec(function(err, result) {
+                if(!err){
+                    res.send(result);
+                }else{
+                    console.log("NG, " + err);
+                    res.send({});                    
+                }
+            });
+        } else {
+            console.log("NG, " + err);
+            res.send({
+                count: 0
+            });
+        }
+    });
+
+    console.log('[OUT]update');
 }
 
 exports.list = function(req, res) {
@@ -134,4 +170,8 @@ exports.list = function(req, res) {
 
 exports.date = function(req, res) {
     findDate(req, res);
+};
+
+exports.update = function(req, res) {
+    update(req, res);
 };

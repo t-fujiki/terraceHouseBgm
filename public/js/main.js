@@ -9,10 +9,23 @@ function onYouTubePlayerReady(playerId) {
     var player = document.getElementById('player');
     player.addEventListener('onStateChange', 'playerState');
     player.playVideo();
+        var scope = angular.element($('#main')).scope().setLayout();
+}
+
+function toLocaleString(date) {
+    var month = "0" + (date.getMonth() + 1);
+    var day = "0" + date.getDate();
+    return [
+    date.getFullYear(), month.substr(month.length - 2), day.substr(day.length - 2)].join('-');
 }
 
 var mainCtrl = function($scope, $http) {
         var current = 0;
+        var previousSortState = {
+            target: "date",
+            order: 0
+        };
+
         $scope.isRandom = true;
 
         $scope.next = function() {
@@ -31,7 +44,7 @@ var mainCtrl = function($scope, $http) {
             }
         };
 
-        playRandom = function(){
+        playRandom = function() {
             var nextIndex = 0;
             nextIndex = Math.floor(Math.random() * $scope.videos.length + 1);
             play($scope.videos[nextIndex]);
@@ -58,10 +71,23 @@ var mainCtrl = function($scope, $http) {
             }
         };
 
+        function inc(video) {
+            $http.post('/api/video/' + video._id, {
+                params: {}
+            }).success(function(data, status, headers, config) {
+                console.log(data);
+                video.count = data[0].count;
+            }).
+            error(function(data, status, headers, config) {
+                alert(status);
+            });
+        }
+
         function play(video) {
             var player = document.getElementById('player');
             $scope.currentVideo = video;
             player.loadVideoById(video.vid);
+            inc(video);
         }
 
         function set(video) {
@@ -74,9 +100,32 @@ var mainCtrl = function($scope, $http) {
 
             $scope.currentVideo = video;
             swfobject.embedSWF("http://www.youtube.com/v/" + video.vid + "?enablejsapi=1&playerapiid=ytplayer", "player", "400", "300", "8", null, null, params, atts);
+            inc(video);
         }
 
+        $scope.setLayout = function() {
+            console.log("[IN]setLayout");
+            var $container = $('#container');
+
+            $container.isotope({
+                itemSelector: '.element',
+                getSortData: {
+                    date: function($elem) {
+                        var date = $elem.attr('date');
+                        return date;
+                    },
+                    count: function($elem) {
+                        var count = parseInt($elem.attr('count'), 10);
+                        return count;
+                    }
+                }
+            });
+            console.log("[OUT]setLayout");
+        };
+
         function setup(condition) {
+            console.log("[IN]setup");
+
             $http.get('/api/video/list', {
                 params: condition
             }).success(function(data, status, headers, config) {
@@ -84,12 +133,11 @@ var mainCtrl = function($scope, $http) {
                 var count = 0;
                 angular.forEach($scope.videos, function(value, key) {
                     var date = new Date(value.date);
-                    value.date = date.toLocaleDateString();
+                    value.date = toLocaleString(date);
                     value.index = count;
                     count++;
                 });
                 // console.log($scope.videos);
-
                 var nextIndex = 0;
                 if ($scope.isRandom == true) {
                     nextIndex = Math.floor(Math.random() * $scope.videos.length);
@@ -100,15 +148,17 @@ var mainCtrl = function($scope, $http) {
             error(function(data, status, headers, config) {
                 alert(status);
             });
+            console.log("[OUT]setup");
         }
 
         setup();
 
         $http.get('/api/video/date', {}).success(function(data, status, headers, config) {
             $scope.dates = [];
+            $scope.dates.push("all");
             angular.forEach(data, function(value, key) {
                 var date = new Date(value);
-                $scope.dates.push(date.toLocaleDateString());
+                $scope.dates.push(toLocaleString(date));
             });
             $scope.date = $scope.dates[0];
         }).error(function(data, status, headers, config) {
@@ -120,15 +170,63 @@ var mainCtrl = function($scope, $http) {
         }
 
         $scope.dateSelected = function($date) {
-            console.log($scope.date);
+            // console.log($scope.date);
+            var $container = $('#container');
+            var options = {},
 
-            var condition = {limit: 10};
-
-            if($scope.date != 'all'){
-                condition.date = $scope.date;
+                key = "filter";
+            value = $scope.date;
+            if (value != "all") {
+                options[key] = '.' + value;
+            } else {
+                options[key] = "*";
             }
+            // parse 'false' as false boolean
+            $container.isotope(options);
 
-            setup(condition);
+            // var condition = {
+            //     limit: 10
+            // };
+            // if ($scope.date != 'all') {
+            //     condition.date = $scope.date;
+            // }
+            // setup(condition);
+        }
+
+        $scope.sort = function($event) {
+            console.log($event.srcElement.value);
+            var $container = $('#container');
+
+            // don't proceed if already selected
+            // if ($this.hasClass('selected')) {
+            //     return false;
+            // }
+            // make option object dynamically, i.e. { filter: '.my-filter-class' }
+            var options = {};
+
+            key = "sortBy";
+            value = $event.srcElement.value;
+            options[key] = value;
+
+            if(previousSortState.target == value)
+            {
+                if(previousSortState.order == 0){                     
+                    options["sortAscending"] = true;
+                    previousSortState.order = 1;
+                                console.log(options);
+                }else{
+                    options["sortAscending"] = false;
+                    previousSortState.order = 0;
+                                console.log(options);
+                }
+            }else{
+                options["sortAscending"] = false;
+                previousSortState.order = 0;
+            }
+            previousSortState.target = value
+            // parse 'false' as false boolean
+            $container.isotope(options);
+
         }
 
         $scope.select = function($event) {

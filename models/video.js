@@ -36,6 +36,10 @@ var schema = new mongoose.Schema({
         type: Date,
         required: false
     },
+    count: {
+        type: Number,
+        required: false
+    },
 });
 
 // create object

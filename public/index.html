@@ -19,11 +19,13 @@
 	<script type="text/javascript" src="js/vendor/angular/angular.js"></script>
 	<script type="text/javascript" src="js/vendor/jquery/jquery.js"></script>
 	<script type="text/javascript" src="js/vendor/swfobject.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.isotope.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
 
+	<link rel="stylesheet" href="css/isotope.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -38,20 +40,15 @@
 	}(document, 'script', 'facebook-jssdk'));</script>
 	<div ng-controller="mainCtrl" id="main" >
 		<div class="navbar navbar-inner navbar-fixed-top">
-			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="./">テラスハウス BGM まとめ</a>
+					<a class="navbar-brand" href="./" ng-click="showall($event)">テラスハウス BGM まとめ</a>
 				</div>
 				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav" id="menu">
-						<li><p class="menutitle">ジャンルから選択</p></li>
-						<li><a href="#" id="all" ng-click="showall($event)">すべて</a></li>
-					</ul>
 					<ul class="nav navbar-nav" id="commenu">
 						<li><p class="menutitle">放送日時から選択</p></li>
 						<li class="padding-15">
@@ -63,9 +60,14 @@
 					<ul class="nav navbar-nav">
 						<li class="padding-15"><p>ランダム再生する: <input type="checkbox" ng-model="isRandom"></p></li>
 					</ul>
+
+						<label>Sort by:</label>
+					<div class="btn-group" data-toggle="buttons-radio">
+						<button name="color" type="button" class="btn" value="date" ng-click="sort($event)">放送日</button>
+						<button name="color" type="button" class="btn" value="count" ng-click="sort($event)">再生数</button>
+					</div>
 				</div><!--/.nav-collapse -->
-			</div>
-		</div>
+		</div><!--/.navbar -->
 		<div class="row">
 			<div class="page-header">
 				<div class="header-description">
@@ -94,9 +96,15 @@
 				</div>
 			</div>    
 		</div>
-		<div class="row">
-			<div class="col-xs-12 col-sm-12">
-				<ul class="vertical-slide">
+<!-- 		<div class="row">			
+ -->			<div id="container" class="isotope">
+					<div ng-repeat="video in videos" class="element isotope-item {{video.date}}" date="{{video.date}}" count="{{video.count}}" ng-click="select($event)" >
+						<p>放送日時: {{video.date}}</p>
+						<img src="{{video.thumbnail}}" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
+						<p>{{video.artist}} 再生回数: {{video.count}}</p>
+						<p>「{{video.title}}」</p>
+					</div>
+<!-- 				<ul class="vertical-slide">
 					<li ng-repeat="video in videos" class="span2">
 						<p>{{video.artist}}</p>
 						<p>「{{video.title}}」</p>
@@ -104,9 +112,9 @@
 						<p>放送日時: {{video.date}}</p>
 					</li>
 				</ul>
-			</div>    
-		</div>
-	</div>
+ -->			</div>    
+<!-- 		</div>
+ -->	</div>
 </div><!-- mainCtrl -->
 <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 </body>

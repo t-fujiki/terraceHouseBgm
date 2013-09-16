@@ -41,6 +41,7 @@ mongoose.connect(uri);
 
 app.get('/api/video/list', video.list);
 app.get('/api/video/date', video.date);
+app.post('/api/video/:id', video.update);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
