@@ -29,6 +29,11 @@ body {
     margin: 0 auto;
 }
 
+.amazonad{
+  display: block;
+  margin: 100px 0 20px;
+}
+
 .button_google {
     float: left;
     width: 80px;

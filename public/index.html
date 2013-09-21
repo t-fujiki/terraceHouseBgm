@@ -82,22 +82,22 @@
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-xs-6 col-sm-6 playerwindow">
-				<center>
-					<span class="glyphicon glyphicon-step-backward player-controller" ng-click="backward($event)"></span>
-					<div id="player"></div>
-					<span class="glyphicon glyphicon-step-forward player-controller" ng-click="forward($event)"></span>
-				</center>
-			</div>    
+		<div class="row-fluid">
 			<div class="col-xs-6 col-sm-6">
-				<div id="amazon">
-					<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=t-fjk-web-22&o=9&p=15&l=st1&mode=music-jp&search={{currentVideo.artist}}&fc1=000000&lt1=_blank&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="640" height="320" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
-				</div>
-			</div>    
-		</div>
-<!-- 		<div class="row">			
- -->			<div id="container" class="isotope">
+				<div class="row-fluid">
+					<div class="playerwindow">
+						<center>
+							<span class="glyphicon glyphicon-step-backward player-controller" ng-click="backward($event)"></span>
+							<div id="player"></div>
+							<span class="glyphicon glyphicon-step-forward player-controller" ng-click="forward($event)"></span>
+						</center>
+					</div>   
+					<div id="amazon">
+						<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=t-fjk-web-22&o=9&p=15&l=st1&mode=music-jp&search={{currentVideo.artist}}&fc1=000000&lt1=_blank&lc1=3366FF&bg1=FFFFFF&f=ifr" width="640" height="320" border="0" frameborder="0" scrolling="no" class="amazonad"></iframe>
+					</div>
+		  		</div>
+	  		</div>
+			<div id="container" class="col-xs-6 col-sm-6 isotope">
 					<div ng-repeat="video in videos" class="element isotope-item {{video.date}} {{video.status}}" date="{{video.date}}" count="{{video.count}}" ng-click="select($event)" >
 						<p>放送日時: {{video.date}}</p>
 						<img src="{{video.thumbnail}}" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
@@ -112,9 +112,10 @@
 						<p>放送日時: {{video.date}}</p>
 					</li>
 				</ul>
- -->			</div>    
+ -->		</div>
 <!-- 		</div>
- -->	</div>
+ -->
+ 		</div>
 </div><!-- mainCtrl -->
 <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 </body>

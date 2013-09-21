@@ -9,7 +9,6 @@ function onYouTubePlayerReady(playerId) {
     var player = document.getElementById('player');
     player.addEventListener('onStateChange', 'playerState');
     player.playVideo();
-    var scope = angular.element($('#main')).scope().setLayout();
 }
 
 function toLocaleString(date) {
