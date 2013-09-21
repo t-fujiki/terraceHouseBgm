@@ -98,7 +98,7 @@
 		</div>
 <!-- 		<div class="row">			
  -->			<div id="container" class="isotope">
-					<div ng-repeat="video in videos" class="element isotope-item {{video.date}}" date="{{video.date}}" count="{{video.count}}" ng-click="select($event)" >
+					<div ng-repeat="video in videos" class="element isotope-item {{video.date}} {{video.status}}" date="{{video.date}}" count="{{video.count}}" ng-click="select($event)" >
 						<p>放送日時: {{video.date}}</p>
 						<img src="{{video.thumbnail}}" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
 						<p>{{video.artist}} 再生回数: {{video.count}}</p>

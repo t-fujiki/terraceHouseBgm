@@ -1,49 +1,54 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 .navbar-inner {
-  background-color: #DDDDDD; /* fallback color, place your own */
+    background-color: #DDDDDD;
+ /* fallback color, place your own */
 }
 
-.a{
-  color: #888888;
+.a {
+    color: #888888;
 }
 
-.menutitle{
-  color: #888888;
+.menutitle {
+    color: #888888;
 }
 
-.page-header{
-	margin: 20px 0 20px;
-	/*margin:0 auto 0 auto;*/
+.page-header {
+    margin: 20px 0 20px;
+  /*margin:0 auto 0 auto;*/
 }
 
-.header-description{
-  float: left;
+.header-description {
+    float: left;
 }
 
-.playerwindow object{
-  margin: 0 auto;
+.playerwindow object {
+    margin: 0 auto;
 }
 
-.button_google{
-  float: left;
-  width: 80px;
+.button_google {
+    float: left;
+    width: 80px;
 }
 
-.twitter-share-button{
-  width: 120px !important;
+.twitter-share-button {
+    width: 120px !important;
 }
 
-.player-controller{
+.player-controller {
     cursor: pointer;
     font-size: 24px;
 }
 
-.videoimg{
-	width: 100%;
+.videoimg {
+    width: 100%;
+}
+
+.playing {
+    border: medium solid #ff00ff;
 }
 
 ul.vertical-slide {
@@ -63,11 +68,11 @@ ul.vertical-slide li[class*="span"]:first-child {
     margin-left: 0;
 }
 
-img.videoimg{
-	cursor: pointer;
+img.videoimg {
+    cursor: pointer;
 }
 
 .navbar-nav>li.padding-15 {
-  padding-top: 15px;
-  padding-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }

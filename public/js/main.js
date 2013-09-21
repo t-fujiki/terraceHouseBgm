@@ -9,7 +9,7 @@ function onYouTubePlayerReady(playerId) {
     var player = document.getElementById('player');
     player.addEventListener('onStateChange', 'playerState');
     player.playVideo();
-        var scope = angular.element($('#main')).scope().setLayout();
+    var scope = angular.element($('#main')).scope().setLayout();
 }
 
 function toLocaleString(date) {
@@ -85,7 +85,9 @@ var mainCtrl = function($scope, $http) {
 
         function play(video) {
             var player = document.getElementById('player');
+            $scope.currentVideo.status = "none";
             $scope.currentVideo = video;
+            $scope.currentVideo.status = "playing";
             player.loadVideoById(video.vid);
             inc(video);
         }
@@ -99,6 +101,7 @@ var mainCtrl = function($scope, $http) {
             };
 
             $scope.currentVideo = video;
+            $scope.currentVideo.status = "playing";
             swfobject.embedSWF("http://www.youtube.com/v/" + video.vid + "?enablejsapi=1&playerapiid=ytplayer", "player", "400", "300", "8", null, null, params, atts);
             inc(video);
         }

@@ -3,7 +3,7 @@
 {
 	artist: "Lenny Kravitz",
 	title: "I Love The Rain",
-	vid: "C1xtuN0gJeI",
+	vid: "aip7cl2x57g",
 	date: ISODate("2013-05-17T09:00:00Z"),
 	category: "",
 }
