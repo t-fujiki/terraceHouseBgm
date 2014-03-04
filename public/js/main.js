@@ -105,6 +105,21 @@ var mainCtrl = function($scope, $http) {
             inc(video);
         }
 
+        function filter(date){
+            var $container = $('#container');
+            var options = {},
+
+            key = "filter";
+            value = $scope.date;
+            if (value != "all") {
+                options[key] = '.' + value;
+            } else {
+                options[key] = "*";
+            }
+            // parse 'false' as false boolean
+            $container.isotope(options);
+        }
+
         $scope.setLayout = function() {
             console.log("[IN]setLayout");
             var $container = $('#container');
@@ -157,12 +172,14 @@ var mainCtrl = function($scope, $http) {
 
         $http.get('/api/video/date', {}).success(function(data, status, headers, config) {
             $scope.dates = [];
-            $scope.dates.push("all");
+            // $scope.dates.push("all"); //
             angular.forEach(data, function(value, key) {
                 var date = new Date(value);
                 $scope.dates.push(toLocaleString(date));
             });
             $scope.date = $scope.dates[0];
+
+            filter($scope.date);
         }).error(function(data, status, headers, config) {
             alert(status);
         });
@@ -172,27 +189,7 @@ var mainCtrl = function($scope, $http) {
         }
 
         $scope.dateSelected = function($date) {
-            // console.log($scope.date);
-            var $container = $('#container');
-            var options = {},
-
-                key = "filter";
-            value = $scope.date;
-            if (value != "all") {
-                options[key] = '.' + value;
-            } else {
-                options[key] = "*";
-            }
-            // parse 'false' as false boolean
-            $container.isotope(options);
-
-            // var condition = {
-            //     limit: 10
-            // };
-            // if ($scope.date != 'all') {
-            //     condition.date = $scope.date;
-            // }
-            // setup(condition);
+            filter($date)
         }
 
         $scope.sort = function($event) {
@@ -212,7 +209,7 @@ var mainCtrl = function($scope, $http) {
 
             if(previousSortState.target == value)
             {
-                if(previousSortState.order == 0){                     
+                if(previousSortState.order == 0){
                     options["sortAscending"] = true;
                     previousSortState.order = 1;
                                 console.log(options);
