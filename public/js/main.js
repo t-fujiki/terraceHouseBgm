@@ -117,7 +117,9 @@ var mainCtrl = function($scope, $http) {
                 options[key] = "*";
             }
             // parse 'false' as false boolean
-            $container.isotope(options);
+            setTimeout(function(){
+                $container.isotope(options);
+            },50)
         }
 
         $scope.setLayout = function() {
