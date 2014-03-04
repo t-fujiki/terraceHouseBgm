@@ -110,7 +110,7 @@ var mainCtrl = function($scope, $http) {
             var options = {},
 
             key = "filter";
-            value = $scope.date;
+            value = date;
             if (value != "all") {
                 options[key] = '.' + value;
             } else {
@@ -161,6 +161,10 @@ var mainCtrl = function($scope, $http) {
                 }
                 set($scope.videos[nextIndex]);
                 current = nextIndex;
+
+                if($scope.date != undefined){
+                    filter($scope.date)
+                }
             }).
             error(function(data, status, headers, config) {
                 alert(status);
@@ -178,8 +182,7 @@ var mainCtrl = function($scope, $http) {
                 $scope.dates.push(toLocaleString(date));
             });
             $scope.date = $scope.dates[0];
-
-            filter($scope.date);
+            filter($scope.date)
         }).error(function(data, status, headers, config) {
             alert(status);
         });
@@ -189,7 +192,9 @@ var mainCtrl = function($scope, $http) {
         }
 
         $scope.dateSelected = function($date) {
-            filter($date)
+            if($scope.date != undefined){
+                filter($scope.date)
+            }
         }
 
         $scope.sort = function($event) {
