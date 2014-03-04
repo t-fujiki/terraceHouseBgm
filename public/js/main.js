@@ -164,28 +164,33 @@ var mainCtrl = function($scope, $http) {
 
                 if($scope.date != undefined){
                     filter($scope.date)
+                }else{
+                    $scope.notset = true;
                 }
             }).
             error(function(data, status, headers, config) {
                 alert(status);
             });
+
+            $http.get('/api/video/date', {}).success(function(data, status, headers, config) {
+                $scope.dates = [];
+                // $scope.dates.push("all"); //
+                angular.forEach(data, function(value, key) {
+                    var date = new Date(value);
+                    $scope.dates.push(toLocaleString(date));
+                });
+                $scope.date = $scope.dates[0];
+                if($scope.notset != undefined){
+                    filter($scope.date)
+                }
+            }).error(function(data, status, headers, config) {
+                alert(status);
+            });
+
             console.log("[OUT]setup");
         }
 
         setup();
-
-        $http.get('/api/video/date', {}).success(function(data, status, headers, config) {
-            $scope.dates = [];
-            // $scope.dates.push("all"); //
-            angular.forEach(data, function(value, key) {
-                var date = new Date(value);
-                $scope.dates.push(toLocaleString(date));
-            });
-            $scope.date = $scope.dates[0];
-            filter($scope.date)
-        }).error(function(data, status, headers, config) {
-            alert(status);
-        });
 
         $scope.showall = function($event) {
             setup();
