@@ -25,7 +25,7 @@ var mainCtrl = function($scope, $http) {
             order: 0
         };
 
-        $scope.isRandom = true;
+        $scope.isRandom = false;
 
         $scope.next = function() {
             if ($scope.isRandom == true) {
@@ -43,30 +43,38 @@ var mainCtrl = function($scope, $http) {
             }
         };
 
-        playRandom = function() {
+        function playRandom() {
             var nextIndex = 0;
             nextIndex = Math.floor(Math.random() * $scope.videos.length + 1);
             play($scope.videos[nextIndex]);
             current = nextIndex;
         };
 
-        playNext = function() {
-            current++;
-            if (current < $scope.videos.length) {
-                play($scope.videos[current]);
-            } else {
-                play($scope.videos[0]);
-                current = 0;
+        function playNext() {
+            while(true){
+                current++;
+                if (current == $scope.videos.length) {
+                    current = 0;
+                }
+
+                if($scope.videos[current].date == $scope.date){
+                    play($scope.videos[current]);
+                    break;
+                }
             }
         };
 
-        playPrev = function() {
-            current--;
-            if (0 <= current) {
-                play($scope.videos[current]);
-            } else {
-                play($scope.videos[$scope.videos.length - 1]);
-                current = $scope.videos.length - 1;
+        function playPrev() {
+            while(true){
+                current--;
+                if (current < 0) {
+                    current = $scope.videos.length - 1;
+                }
+
+                if($scope.videos[current].date == $scope.date){
+                    play($scope.videos[current]);
+                    break;
+                }
             }
         };
 
