@@ -64,13 +64,13 @@ db.videos.insert(
 	category: "",
 }
 ,
-{
-	artist: "さかいゆう",
-	title: "ROCK WITH YOU",
-	vid: "",
-	date: ISODate("2013-10-14T09:00:00Z"),
-	category: "",
-}
+# {
+# 	artist: "さかいゆう",
+# 	title: "ROCK WITH YOU",
+# 	vid: "",
+# 	date: ISODate("2013-10-14T09:00:00Z"),
+# 	category: "",
+# } // TODO vid not found
 ,
 {
 	artist: "THE BOO RADLEYS",

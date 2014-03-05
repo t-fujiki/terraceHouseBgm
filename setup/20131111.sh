@@ -40,14 +40,14 @@ db.videos.insert(
 	category: "",
 }
 ,
-{
-	artist: "OLD NICK aka DJ HASEBE",
-	title: "The Lazy Song",
-	vid: "",
-	date: ISODate("2013-11-11T09:00:00Z"),
-	category: "",
-}
-,
+# {
+# 	artist: "OLD NICK aka DJ HASEBE",
+# 	title: "The Lazy Song",
+# 	vid: "",
+# 	date: ISODate("2013-11-11T09:00:00Z"),
+# 	category: "",
+# } // TODO vid not found
+# ,
 {
 	artist: "JACK JOHNSON",
 	title: "NEVER FADE",
