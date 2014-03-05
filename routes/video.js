@@ -44,9 +44,13 @@ function findVideos(condition, req, res) {
                             console.log('get original data, id = ' + video.vid + ', body =' + body);
 
                             recent = JSON.parse(body);
-                            video.original_title = recent.entry.title.$t;
-                            video.url = recent.entry.media$group.media$player[0].url;
-                            video.thumbnail = recent.entry.media$group.media$thumbnail[0].url;
+                            if(recent.entry != undefined){
+                                if(recent.entry.title != undefined){
+                                    video.original_title = recent.entry.title.$t;
+                                }
+                                video.url = recent.entry.media$group.media$player[0].url;
+                                video.thumbnail = recent.entry.media$group.media$thumbnail[0].url;
+                            } 
                             dump(video);
                             var newVideo = new Video(video);
                             dump(newVideo);
