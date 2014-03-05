@@ -38,5 +38,5 @@ db.videos.insert(
 	vid: "soAoGvyHy9M",
 	date: ISODate("2013-09-13T09:00:00Z"),
 	category: "",
-}
+} // TODO need to be replaced
 ]);

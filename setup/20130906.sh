@@ -46,7 +46,7 @@ db.videos.insert(
 	vid: "QijfdFbfqN8",
 	date: ISODate("2013-09-06T09:00:00Z"),
 	category: "",
-}
+} // TODO need to be replaced
 ,
 {
 	artist: "GUNS N' ROSES",
@@ -54,5 +54,5 @@ db.videos.insert(
 	vid: "zRIbf6JqkNc",
 	date: ISODate("2013-09-06T09:00:00Z"),
 	category: "",
-}
+} // TODO need to be replaced
 ]);

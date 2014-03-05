@@ -11,7 +11,7 @@ db.videos.insert(
 {
 	artist: "Nelly Furtado",
 	title: "TRY",
-	vid: "1Kw2UHDQ",
+	vid: "3--1Kw2UHDQ",
 	date: ISODate("2013-12-16T09:00:00Z"),
 	category: "",
 }
