@@ -1,5 +1,5 @@
 db.videos.insert(
-	[
+[
 {
 	artist: "MAROON 5",
 	title: "ONE MORE NIGHT",
@@ -37,7 +37,7 @@ db.videos.insert(
 	title: "Hold You feat.Yu Sakai",
 	vid: "ydwl9uf1eWg",
 	date: ISODate("2014-03-03T09:00:00Z"),
-	category: “”,
+	category: "",
 }
 ,
 {
@@ -45,7 +45,7 @@ db.videos.insert(
 	title: "All Through The Night",
 	vid: "yW8qxUitG-Q",
 	date: ISODate("2014-03-03T09:00:00Z"),
-	category: “”,
+	category: "",
 }
 ,
 {
@@ -53,7 +53,7 @@ db.videos.insert(
 	title: "Runnin'",
 	vid: "1hZKN4AZ63g",
 	date: ISODate("2014-03-03T09:00:00Z"),
-	category: “”,
+	category: "",
 }
 
 ]);

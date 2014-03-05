@@ -153,46 +153,43 @@ var mainCtrl = function($scope, $http) {
         function setup(condition) {
             console.log("[IN]setup");
 
-            $http.get('/api/video/list', {
-                params: condition
-            }).success(function(data, status, headers, config) {
-                $scope.videos = data;
-                var count = 0;
-                angular.forEach($scope.videos, function(value, key) {
-                    var date = new Date(value.date);
-                    value.date = toLocaleString(date);
-                    value.index = count;
-                    count++;
-                });
-                // console.log($scope.videos);
-                var nextIndex = 0;
-                if ($scope.isRandom == true) {
-                    nextIndex = Math.floor(Math.random() * $scope.videos.length);
-                }
-                set($scope.videos[nextIndex]);
-                current = nextIndex;
-
-                if($scope.date != undefined){
-                    filter($scope.date)
-                }else{
-                    $scope.notset = true;
-                }
-            }).
-            error(function(data, status, headers, config) {
-                alert(status);
-            });
-
             $http.get('/api/video/date', {}).success(function(data, status, headers, config) {
                 $scope.dates = [];
                 // $scope.dates.push("all"); //
                 angular.forEach(data, function(value, key) {
-                    var date = new Date(value);
-                    $scope.dates.push(toLocaleString(date));
+                    // var date = new Date(value);
+                    // $scope.dates.push(toLocaleString(date));
+                    $scope.dates.push(value);
                 });
                 $scope.date = $scope.dates[0];
-                if($scope.notset != undefined){
-                    filter($scope.date)
-                }
+
+                $http.get('/api/video/list', {
+                    params: condition
+                }).success(function(data, status, headers, config) {
+                    $scope.videos = data;
+                    var count = 0;
+                    angular.forEach($scope.videos, function(value, key) {
+                        var date = new Date(value.date);
+                        value.date = toLocaleString(date);
+                        value.index = count;
+                        count++;
+                    });
+                    // console.log($scope.videos);
+                    var nextIndex = 0;
+                    if ($scope.isRandom == true) {
+                        nextIndex = Math.floor(Math.random() * $scope.videos.length);
+                    }
+                    set($scope.videos[nextIndex]);
+                    current = nextIndex;
+
+                    setTimeout(function(){
+                        filter($scope.date);                        
+                    },50)
+                }).
+                error(function(data, status, headers, config) {
+                    alert(status);
+                });
+
             }).error(function(data, status, headers, config) {
                 alert(status);
             });
