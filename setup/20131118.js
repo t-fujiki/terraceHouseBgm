@@ -1,13 +1,13 @@
 db.videos.insert(
 	[
-{
-	artist: "朝本浩文",
-	title: "パレードのテーマ〜雨の夜",
-	vid: "",
-	date: ISODate("2013-11-18T09:00:00Z"),
-	category: "",
-}
-,
+// {
+// 	artist: "朝本浩文",
+// 	title: "パレードのテーマ〜雨の夜",
+// 	vid: "",
+// 	date: ISODate("2013-11-18T09:00:00Z"),
+// 	category: "",
+// }
+// ,
 {
 	artist: "ARCTIC MONKEYS",
 	title: "NO.1 PARTY ANTHEM",
