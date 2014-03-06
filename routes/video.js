@@ -81,7 +81,7 @@ function findVideos(condition, req, res) {
                         dump(video);
                     });
                 } else {
-                    console.log('data is up-to-date, id = ' + video.vid);
+                    console.log('data is up-to-date, id = ' + video.vid + ', title = ' + video.title + ', date = ' + video.date);
                 }
             }))
 

@@ -150,7 +150,37 @@ var mainCtrl = function($scope, $http) {
             console.log("[OUT]setLayout");
         };
 
-        function setup(condition) {
+        function showVideos(date){
+            $http.get('/api/video/list', {
+                params: null
+            }).success(function(data, status, headers, config) {
+                $scope.videos = data;
+                var count = 0;
+                angular.forEach($scope.videos, function(value, key) {
+                    var date = new Date(value.date);
+                    value.date = toLocaleString(date);
+                    value.index = count;
+                    count++;
+                });
+                // console.log($scope.videos);
+                var nextIndex = 0;
+                if ($scope.isRandom == true) {
+                    nextIndex = Math.floor(Math.random() * $scope.videos.length);
+                }
+                set($scope.videos[nextIndex]);
+                current = nextIndex;
+
+                if($scope.date != undefined){
+                    filter($scope.date);
+                }
+            }).
+            error(function(data, status, headers, config) {
+                console.log('error at get list:' + status);
+            });
+
+        }
+
+        function setup() {
             console.log("[IN]setup");
 
             $http.get('/api/video/date', {}).success(function(data, status, headers, config) {
@@ -162,33 +192,7 @@ var mainCtrl = function($scope, $http) {
                     $scope.dates.push(value);
                 });
                 $scope.date = $scope.dates[0];
-
-                $http.get('/api/video/list', {
-                    params: condition
-                }).success(function(data, status, headers, config) {
-                    $scope.videos = data;
-                    var count = 0;
-                    angular.forEach($scope.videos, function(value, key) {
-                        var date = new Date(value.date);
-                        value.date = toLocaleString(date);
-                        value.index = count;
-                        count++;
-                    });
-                    // console.log($scope.videos);
-                    var nextIndex = 0;
-                    if ($scope.isRandom == true) {
-                        nextIndex = Math.floor(Math.random() * $scope.videos.length);
-                    }
-                    set($scope.videos[nextIndex]);
-                    current = nextIndex;
-
-                    setTimeout(function(){
-                        filter($scope.date);
-                    },50)
-                }).
-                error(function(data, status, headers, config) {
-                    console.log('error at get list:' + status);
-                });
+                showVideos($scope.date);
 
             }).error(function(data, status, headers, config) {
                 console.log('error at get date:' + status);
@@ -205,6 +209,7 @@ var mainCtrl = function($scope, $http) {
 
         $scope.dateSelected = function($date) {
             if($scope.date != undefined){
+                // showVideos($scope.date);
                 filter($scope.date)
             }
         }
