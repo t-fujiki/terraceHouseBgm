@@ -42,36 +42,39 @@ function findVideos(condition, req, res) {
                         });
                         res.on('end', function() {
                             console.log('get original data, id = ' + video.vid + ', title = ' + video.title + ', date = ' + video.date + ' , body =' + body);
-
-                            recent = JSON.parse(body);
-                            if(recent.entry != undefined){
-                                if(recent.entry.title != undefined){
-                                    video.original_title = recent.entry.title.$t;
-                                }
-                                video.url = recent.entry.media$group.media$player[0].url;
-                                video.thumbnail = recent.entry.media$group.media$thumbnail[0].url;
-                            } 
-                            dump(video);
-                            var newVideo = new Video(video);
-                            dump(newVideo);
-                            //    newVideo.save(function(err) {
-                            Video.update({
-                                _id: newVideo._id
-                            }, {
-                                $set: {
-                                    original_title: newVideo.original_title,
-                                    url: newVideo.url,
-                                    thumbnail: newVideo.thumbnail
-                                }
-                            }, {
-                                upsert: true
-                            }, function(err) {
-                                if (!err) {
-                                    console.log(video);
-                                } else {
-                                    console.log("NG, " + err);
-                                }
-                            });
+                            try{
+                                recent = JSON.parse(body);
+                                if(recent.entry != undefined){
+                                    if(recent.entry.title != undefined){
+                                        video.original_title = recent.entry.title.$t;
+                                    }
+                                    video.url = recent.entry.media$group.media$player[0].url;
+                                    video.thumbnail = recent.entry.media$group.media$thumbnail[0].url;
+                                } 
+                                dump(video);
+                                var newVideo = new Video(video);
+                                dump(newVideo);
+                                //    newVideo.save(function(err) {
+                                Video.update({
+                                    _id: newVideo._id
+                                }, {
+                                    $set: {
+                                        original_title: newVideo.original_title,
+                                        url: newVideo.url,
+                                        thumbnail: newVideo.thumbnail
+                                    }
+                                }, {
+                                    upsert: true
+                                }, function(err) {
+                                    if (!err) {
+                                        console.log(video);
+                                    } else {
+                                        console.log("NG, " + err);
+                                    }
+                                });
+                            }catch(e){
+                                console.log('error while getting original data, id = ' + video.vid + ', title = ' + video.title + ', date = ' + video.date + ' , e =' + e);
+                            }
                         });
                     });
 
