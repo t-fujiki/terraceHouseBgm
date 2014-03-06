@@ -15,6 +15,10 @@
 	<title>テラスハウス BGM まとめ</title>
 	<link rel="shortcut icon" href="img/favicon.ico">
 
+	<link rel="stylesheet" href="css/isotope.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/foundation.css">
+
 	<script type="text/javascript" src="js/analytics.js"></script>
 	<script type="text/javascript" src="js/vendor/angular/angular.js"></script>
 	<script type="text/javascript" src="js/vendor/jquery/jquery.js"></script>
@@ -22,14 +26,10 @@
 	<script type="text/javascript" src="js/vendor/jquery.isotope.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
-
-	<link rel="stylesheet" href="css/isotope.css">
-	<link rel="stylesheet" href="css/style.css">
+	<script src="js/vendor/modernizr.js"></script>
 </head>
 
-<body>  
+<body>
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0];
@@ -39,67 +39,77 @@
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 	<div ng-controller="mainCtrl" id="main" >
-		<div class="navbar navbar-inner navbar-fixed-top">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="./" ng-click="showall($event)">テラスハウス BGM まとめ</a>
-				</div>
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav" id="commenu">
-						<li><p class="menutitle">放送日時から選択</p></li>
-						<li class="padding-15">
-							<select id="date-area" ng-model="date" ng-options="date for date in dates" ng-change="dateSelected($date)">
-								<option value="all">-- choose date --</option>
-							</select>
-						</li>
-					</ul>
-					<ul class="nav navbar-nav">
-						<li class="padding-15"><p>ランダム再生する: <input type="checkbox" ng-model="isRandom"></p></li>
-					</ul>
-
-						<label>Sort by:</label>
-					<div class="btn-group" data-toggle="buttons-radio">
-						<button name="color" type="button" class="btn" value="date" ng-click="sort($event)">放送日</button>
-						<button name="color" type="button" class="btn" value="count" ng-click="sort($event)">再生数</button>
-					</div>
-				</div><!--/.nav-collapse -->
+		<div class="row">
+			<div class="large-12 medium-12 columns">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="./" ng-click="showall($event)">テラスハウス BGM まとめ</a>
+			</div>
 		</div><!--/.navbar -->
 		<div class="row">
-			<div class="page-header">
-				<div class="header-description">
-				フジテレビ系列で放送されている「テラスハウス」の BGM をまとめてみました。	
+			<div class="large-12 medium-12 columns">
+				<div class="page-header">
+					<div class="header-description">
+					フジテレビ系列で放送されている「テラスハウス」の BGM をまとめてみました。	
+					</div>
+					<div class="button_google">
+						<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script><g:plusone></g:plusone>
+					</div>
+					<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fterracehousebgm.herokuapp.com%2F&amp;width=110&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false&amp;appId=294469960695965" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+					<a href="http://b.hatena.ne.jp/entry/http://terracehousebgm.herokuapp.com/" class="hatena-bookmark-button" data-hatena-bookmark-title="テラスハウス BGM まとめ" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="60" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 				</div>
-				<div class="button_google">
-					<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script><g:plusone></g:plusone>
-				</div>
-				<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fterracehousebgm.herokuapp.com%2F&amp;width=110&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false&amp;appId=294469960695965" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
-				<a href="http://b.hatena.ne.jp/entry/http://terracehousebgm.herokuapp.com/" class="hatena-bookmark-button" data-hatena-bookmark-title="テラスハウス BGM まとめ" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="60" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-				<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 			</div>
 		</div>
-		<div class="row-fluid">
-			<div class="col-xs-6 col-sm-6">
-				<div class="row-fluid">
-					<div class="playerwindow">
-						<center>
-							<span class="glyphicon glyphicon-step-backward player-controller" ng-click="backward($event)"></span>
-							<div id="player"></div>
-							<span class="glyphicon glyphicon-step-forward player-controller" ng-click="forward($event)"></span>
-						</center>
-					</div>   
-					<div id="amazon">
+		<div class="row">
+			<div class="large-9 medium-9 columns">
+				<div class="playerwindow">
+	          		<div class="row">
+							<center>
+						<div class="large-2 medium-2 columns">
+							<a href="#" class="button" ng-click="backward($event)">＜</a>
+						</div>
+						<div class="large-8 medium-8 columns">
+								<div id="player"></div>
+						</div>
+						<div class="large-2 medium-2 columns">
+							<a href="#" class="button" ng-click="forward($event)">＞</a>
+						</div>
+							</center>
+			  		</div>
+				</div>
+<!-- 					<div id="amazon">
 						<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=t-fjk-web-22&o=9&p=15&l=st1&mode=music-jp&search={{currentVideo.artist}}&fc1=000000&lt1=_blank&lc1=3366FF&bg1=FFFFFF&f=ifr" width="640" height="320" border="0" frameborder="0" scrolling="no" class="amazonad"></iframe>
-					</div>
-		  		</div>
+					</div> -->
 	  		</div>
-			<div id="container" class="col-xs-6 col-sm-6 isotope">
+			<div class="large-3 medium-3 columns">
+				<ul class="nav navbar-nav" id="commenu">
+					<li><p class="menutitle">放送日時から選択</p></li>
+					<li class="padding-15">
+						<select id="date-area" ng-model="date" ng-options="date for date in dates" ng-change="dateSelected($date)">
+							<option value="all">-- choose date --</option>
+						</select>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav">
+					<li class="padding-15"><p>ランダム再生する: <input type="checkbox" ng-model="isRandom"></p></li>
+				</ul>
+
+<!-- 					<label>Sort by:</label>
+				<div class="btn-group" data-toggle="buttons-radio">
+					<button name="color" type="button" class="btn" value="date" ng-click="sort($event)">放送日</button>
+					<button name="color" type="button" class="btn" value="count" ng-click="sort($event)">再生数</button>
+				</div> -->
+			</div><!--/.nav-collapse -->
+		</div>
+		<div class="row">
+			<div id="container" class="large-12 medium-12 columns isotope">
 					<div ng-repeat="video in videos" class="element isotope-item {{video.date}} {{video.status}}" date="{{video.date}}" count="{{video.count}}" ng-click="select($event)" >
-						<p>放送日時: {{video.date}}</p>
+<!-- 						<p>放送日時: {{video.date}}</p> -->
 						<img src="{{video.thumbnail}}" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
 						<p>{{video.artist}} 再生回数: {{video.count}}</p>
 						<p>「{{video.title}}」</p>
@@ -118,4 +128,8 @@
  		</div>
 </div><!-- mainCtrl -->
 <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<script src="js/foundation.min.js"></script>
+<script>
+  $(document).foundation();
+</script>
 </body>
