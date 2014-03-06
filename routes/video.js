@@ -41,7 +41,7 @@ function findVideos(condition, req, res) {
                             body += data.toString();
                         });
                         res.on('end', function() {
-                            console.log('get original data, id = ' + video.vid + ', body =' + body);
+                            console.log('get original data, id = ' + video.vid + ', title = ' + video.title + ', date = ' + video.date + ' , body =' + body);
 
                             recent = JSON.parse(body);
                             if(recent.entry != undefined){

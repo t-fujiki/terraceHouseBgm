@@ -86,7 +86,7 @@ var mainCtrl = function($scope, $http) {
                 video.count = data[0].count;
             }).
             error(function(data, status, headers, config) {
-                alert(status);
+                console.log('error at get date:' + status);
             });
         }
 
@@ -183,15 +183,15 @@ var mainCtrl = function($scope, $http) {
                     current = nextIndex;
 
                     setTimeout(function(){
-                        filter($scope.date);                        
+                        filter($scope.date);
                     },50)
                 }).
                 error(function(data, status, headers, config) {
-                    alert(status);
+                    console.log('error at get list:' + status);
                 });
 
             }).error(function(data, status, headers, config) {
-                alert(status);
+                console.log('error at get date:' + status);
             });
 
             console.log("[OUT]setup");
