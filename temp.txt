@@ -1,0 +1,101 @@
+2014-03-05T04:43:42.094627+00:00 app[web.1]: data is up-to-date, id = _0nNX8upRfE
+2014-03-05T04:43:42.096726+00:00 app[web.1]: data is up-to-date, id = U0CGsw6h60k
+2014-03-05T04:43:42.096904+00:00 app[web.1]: data is up-to-date, id = 9DQtY75km8k
+2014-03-05T04:43:42.096904+00:00 app[web.1]: data is up-to-date, id = Eqs9MibvnlA
+2014-03-05T04:43:42.096904+00:00 app[web.1]: data is up-to-date, id = Udar4dcdSpM
+2014-03-05T04:43:42.096904+00:00 app[web.1]: data is up-to-date, id = fk1Q9y6VVy0
+2014-03-05T04:43:42.096904+00:00 app[web.1]: data is up-to-date, id = knU9gRUWCno
+2014-03-05T04:43:42.094804+00:00 app[web.1]: data is up-to-date, id = MB2F6nagjKs
+2014-03-05T04:43:42.094804+00:00 app[web.1]: data is up-to-date, id = ktgHNJ4RmIY
+2014-03-05T04:43:42.094804+00:00 app[web.1]: data is up-to-date, id = AEYN5w4T_aM
+2014-03-05T04:43:42.096904+00:00 app[web.1]: data is up-to-date, id = xPEuxZ6OZYo
+2014-03-05T04:43:42.097081+00:00 app[web.1]: data is up-to-date, id = 4aeETEoNfOg
+2014-03-05T04:43:42.097081+00:00 app[web.1]: data is up-to-date, id = WRmBChQjZPs
+2014-03-05T04:43:42.097081+00:00 app[web.1]: data is up-to-date, id = reG7Iu8seos
+2014-03-05T04:43:42.096904+00:00 app[web.1]: data is up-to-date, id = 1RuQy8sKKak
+2014-03-05T04:43:42.097081+00:00 app[web.1]: data is up-to-date, id = TMbyWSGYUgc
+2014-03-05T04:43:42.097081+00:00 app[web.1]: data is up-to-date, id = 6ssiTuXTNnU
+2014-03-05T04:43:42.097081+00:00 app[web.1]: data is up-to-date, id = DNL6Wy6IstE
+2014-03-05T04:43:42.097081+00:00 app[web.1]: data is up-to-date, id = WHRnvjCkTsw
+2014-03-05T04:43:42.097081+00:00 app[web.1]: data is up-to-date, id = NHOf3s70w-c
+2014-03-05T04:43:42.097081+00:00 app[web.1]: data is up-to-date, id = q3Yl4ehzX-o
+2014-03-05T04:43:42.097258+00:00 app[web.1]: data is up-to-date, id = qCbgDKThHD8
+2014-03-05T04:43:42.097258+00:00 app[web.1]: data is up-to-date, id = hiroRkCtjm0
+2014-03-05T04:43:42.097258+00:00 app[web.1]: data is up-to-date, id = iZb6_7RGTwM
+2014-03-05T04:43:42.097258+00:00 app[web.1]: data is up-to-date, id = wagn8Wrmzuc
+2014-03-05T04:43:42.097258+00:00 app[web.1]: data is up-to-date, id = 1hZKN4AZ63g
+2014-03-05T04:43:42.097258+00:00 app[web.1]: data is up-to-date, id = E3m-XH1Kij0
+2014-03-05T04:43:42.097258+00:00 app[web.1]: data is up-to-date, id = U8kr_ws3bGY
+2014-03-05T04:43:42.097258+00:00 app[web.1]: data is up-to-date, id = Q7zQlsLgYhg
+2014-03-05T04:43:42.097434+00:00 app[web.1]: data is up-to-date, id = VlPgkaq2xmw
+2014-03-05T04:43:42.097434+00:00 app[web.1]: data is up-to-date, id = AEYN5w4T_aM
+2014-03-05T04:43:42.097434+00:00 app[web.1]: data is up-to-date, id = u5CVsCnxyXg
+2014-03-05T04:43:42.097081+00:00 app[web.1]: data is up-to-date, id = -RxpvZTVIOs
+2014-03-05T04:43:42.097258+00:00 app[web.1]: data is up-to-date, id = J551f-TyqjY
+2014-03-05T04:43:42.094627+00:00 app[web.1]: data is up-to-date, id = hdBqjR5b0-c
+2014-03-05T04:43:42.094979+00:00 app[web.1]: data is up-to-date, id = CPEBN2dVNUY
+2014-03-05T04:43:42.094979+00:00 app[web.1]: data is up-to-date, id = MuZhnNR6vzc
+2014-03-05T04:43:42.094979+00:00 app[web.1]: data is up-to-date, id = PAMqJP4VvdE
+2014-03-05T04:43:42.097434+00:00 app[web.1]: data is up-to-date, id = ZKlkM3Qu5BM
+2014-03-05T04:43:42.097434+00:00 app[web.1]: data is up-to-date, id = WA4iX5D9Z64
+2014-03-05T04:43:42.094627+00:00 app[web.1]: data is up-to-date, id = 1hZKN4AZ63g
+2014-03-05T04:43:42.095152+00:00 app[web.1]: data is up-to-date, id = wOSv1TIa58M
+2014-03-05T04:43:42.095152+00:00 app[web.1]: data is up-to-date, id = CyM5AjiZris
+2014-03-05T04:43:42.095152+00:00 app[web.1]: data is up-to-date, id = JhqyZeUlE8U
+2014-03-05T04:43:42.178187+00:00 app[web.1]: wIaGQkquV_OUyGzzBMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp","type":"video/3gpp","medium":"video","expression":"full","duration":252,"yt$format":1},{"url":"rtsp://r8---sn-p5qlsu7d.c.youtube.com/CiILENy73wIaGQkquV_OUyGzzBMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp","type":"video/3gpp","medium":"video","expression":"full","duration":252,"yt$format":6}],"media$description":{"$t":"ALBUM: On the Rainbow [2013]\nhttps://www.facebook.com/anookchannel","type":"plain"},"media$keywords":{},"media$player":[{"url":"http://www.youtube.com/watch?v=zLMhU85fuSo&feature=youtube_gdata_player"}],"media$thumbnail":[{"url":"http://i1.ytimg.com/vi/zLMhU85fuSo/0.jpg","height":360,"width":480,"time":"00:02:06"},{"url":"http://i1.ytimg.com/vi/zLMhU85fuSo/1.jpg","height":90,"width":120,"time":"00:01:03"},{"url":"http://i1.ytimg.com/vi/zLMhU85fuSo/2.jpg","height":90,"width":120,"time":"00:02:06"},{"url":"http://i1.ytimg.com/vi/zLMhU85fuSo/3.jpg","height":90,"width":120,"time":"00:03:09"}],"media$title":{"$t":"Robert De Boron - Carry On (feat. 
+2014-03-05T04:43:42.178187+00:00 app[web.1]: Taro Miura from HO17 & Dawngun) [2013]","type":"plain"},"yt$duration":{"seconds":"252"}},"gd$rating":{"average":4.866667,"max":5,"min":1,"numRaters":90,"rel":"http://schemas.google.com/g/2005#overall"},"yt$statistics":{"favoriteCount":"0","viewCount":"19063"}}}
+2014-03-05T04:43:42.178187+00:00 app[web.1]: get original data, id = zLMhU85fuSo, body ={"version":"1.0","encoding":"UTF-8","entry":{"xmlns":"http://www.w3.org/2005/Atom","xmlns$media":"http://search.yahoo.com/mrss/","xmlns$gd":"http://schemas.google.com/g/2005","xmlns$yt":"http://gdata.youtube.com/schemas/2007","id":{"$t":"http://gdata.youtube.com/feeds/api/videos/zLMhU85fuSo"},"published":{"$t":"2013-04-08T19:08:06.000Z"},"updated":{"$t":"2014-03-03T18:29:46.000Z"},"category":[{"scheme":"http://schemas.google.com/g/2005#kind","term":"http://gdata.youtube.com/schemas/2007#video"},{"scheme":"http://gdata.youtube.com/schemas/2007/categories.cat","term":"Music","label":"Music"}],"title":{"$t":"Robert De Boron - Carry On (feat. Taro Miura from HO17 & Dawngun) [2013]","type":"text"},"content":{"$t":"ALBUM: On the Rainbow [2013]\nhttps://www.facebook.com/anookchannel","type":"text"},"link":[{"rel":"alternate","type":"text/html","href":"http://www.youtube.com/watch?v=zLMhU85fuSo&feature=youtube_gdata"},{"rel":"http://gdata.youtube.com/schemas/2007#video.rela
+2014-03-05T04:43:42.121926+00:00 app[web.1]: [90mGET /api/video/list [36m304 [90m350ms[0m
+2014-03-05T04:43:42.181999+00:00 app[web.1]:   original_title: 'Robert De Boron - Carry On (feat. Taro Miura from HO17 & Dawngun) [2013]',
+2014-03-05T04:43:42.097434+00:00 app[web.1]: data is up-to-date, id = 1lyu1KKwC74
+2014-03-05T04:43:42.181999+00:00 app[web.1]:   url: 'http://www.youtube.com/watch?v=zLMhU85fuSo&feature=youtube_gdata_player',
+2014-03-05T04:43:42.097434+00:00 app[web.1]: data is up-to-date, id = MOmZimH00oo
+2014-03-05T04:43:42.094804+00:00 app[web.1]: data is up-to-date, id = zQ1v1pMdIoQ
+2014-03-05T04:43:42.095324+00:00 app[web.1]: data is up-to-date, id = 5DuVt1k8bdM
+2014-03-05T04:43:42.095152+00:00 app[web.1]: data is up-to-date, id = r4tW3mhp9io
+2014-03-05T04:43:42.095324+00:00 app[web.1]: data is up-to-date, id = lPvhKV3Yg2k
+2014-03-05T04:43:42.181999+00:00 app[web.1]:   title: 'Carry On feat. Taro Miura from HO17 & Dawngun',
+2014-03-05T04:43:42.181999+00:00 app[web.1]:   artist: 'ROBERT DE BORON',
+2014-03-05T04:43:42.181999+00:00 app[web.1]:   date: Mon Dec 16 2013 09:00:00 GMT+0000 (UTC) }
+2014-03-05T04:43:42.181999+00:00 app[web.1]:   category: '',
+2014-03-05T04:43:42.094979+00:00 app[web.1]: data is up-to-date, id = iwb7epsaiu4
+2014-03-05T04:43:42.095324+00:00 app[web.1]: data is up-to-date, id = GwFBshjGe8I
+2014-03-05T04:43:42.095324+00:00 app[web.1]: data is up-to-date, id = QRR_pvZcu-o
+2014-03-05T04:43:42.095324+00:00 app[web.1]: data is up-to-date, id = erG5rgNYSdk
+2014-03-05T04:43:42.182977+00:00 app[web.1]:   artist: 'ROBERT DE BORON',
+2014-03-05T04:43:42.181999+00:00 app[web.1]:   vid: 'zLMhU85fuSo',
+2014-03-05T04:43:42.182977+00:00 app[web.1]:   title: 'Carry On feat. Taro Miura from HO17 & Dawngun',
+2014-03-05T04:43:42.178187+00:00 app[web.1]: ted","type":"application/atom+xml","href":"http://gdata.youtube.com/feeds/api/videos/zLMhU85fuSo/related"},{"rel":"http://gdata.youtube.com/schemas/2007#mobile","type":"text/html","href":"http://m.youtube.com/details?v=zLMhU85fuSo"},{"rel":"self","type":"application/atom+xml","href":"http://gdata.youtube.com/feeds/api/videos/zLMhU85fuSo"}],"author":[{"name":{"$t":"anook9"},"uri":{"$t":"http://gdata.youtube.com/feeds/api/users/anook9"}}],"gd$comments":{"gd$feedLink":{"rel":"http://gdata.youtube.com/schemas/2007#comments","href":"http://gdata.youtube.com/feeds/api/videos/zLMhU85fuSo/comments","countHint":7}},"media$group":{"media$category":[{"$t":"Music","label":"Music","scheme":"http://gdata.youtube.com/schemas/2007/categories.cat"}],"media$content":[{"url":"http://www.youtube.com/v/zLMhU85fuSo?version=3&f=videos&app=youtube_gdata","type":"application/x-shockwave-flash","medium":"video","isDefault":"true","expression":"full","duration":252,"yt$format":5},{"url":"rtsp://r8---sn-p5qlsu7d.c.youtube.com/CiILENy73
+2014-03-05T04:43:42.095152+00:00 app[web.1]: data is up-to-date, id = DYiyG2JIy3g
+2014-03-05T04:43:42.096191+00:00 app[web.1]: data is up-to-date, id = Ffey9tRmagg
+2014-03-05T04:43:42.096191+00:00 app[web.1]: data is up-to-date, id = dmE4r7i-rLY
+2014-03-05T04:43:42.181999+00:00 app[web.1]: { thumbnail: 'http://i1.ytimg.com/vi/zLMhU85fuSo/0.jpg',
+2014-03-05T04:43:42.189020+00:00 app[web.1]: { thumbnail: 'http://i1.ytimg.com/vi/zLMhU85fuSo/0.jpg',
+2014-03-05T04:43:42.189020+00:00 app[web.1]:   url: 'http://www.youtube.com/watch?v=zLMhU85fuSo&feature=youtube_gdata_player',
+2014-03-05T04:43:42.182977+00:00 app[web.1]:   thumbnail: 'http://i1.ytimg.com/vi/zLMhU85fuSo/0.jpg',
+2014-03-05T04:43:42.181999+00:00 app[web.1]:   _id: 53168c1b5cfc0a7179bfd9ac,
+2014-03-05T04:43:42.095324+00:00 app[web.1]: data is up-to-date, id = XrgyB7GXgII
+2014-03-05T04:43:42.096726+00:00 app[web.1]: data is up-to-date, id = TVPznkU0XNg
+2014-03-05T04:43:42.096726+00:00 app[web.1]: data is up-to-date, id = KRvbF4BzgqA
+2014-03-05T04:43:42.097258+00:00 app[web.1]: data is up-to-date, id = KDHd-vxcMDo
+2014-03-05T04:43:42.097434+00:00 app[web.1]: data is up-to-date, id = GemKqzILV4w
+2014-03-05T04:43:42.095324+00:00 app[web.1]: data is up-to-date, id = DaF2mxsTREU
+2014-03-05T04:43:42.189020+00:00 app[web.1]:   original_title: 'Robert De Boron - Carry On (feat. Taro Miura from HO17 & Dawngun) [2013]',
+2014-03-05T04:43:42.182977+00:00 app[web.1]: { vid: 'zLMhU85fuSo',
+2014-03-05T04:43:42.182977+00:00 app[web.1]:   date: Mon Dec 16 2013 09:00:00 GMT+0000 (UTC) }
+2014-03-05T04:43:42.096726+00:00 app[web.1]: data is up-to-date, id = I2P8lHgTjx8
+2014-03-05T04:43:42.182977+00:00 app[web.1]:   original_title: 'Robert De Boron - Carry On (feat. Taro Miura from HO17 & Dawngun) [2013]',
+2014-03-05T04:43:42.182977+00:00 app[web.1]:   url: 'http://www.youtube.com/watch?v=zLMhU85fuSo&feature=youtube_gdata_player',
+2014-03-05T04:43:42.182977+00:00 app[web.1]:   _id: 53168c1b5cfc0a7179bfd9ac,
+2014-03-05T04:39:57.058471+00:00 heroku[router]: at=info method=GET path=/js/vendor/angular/angular.js host=terrace-house.takecian.com request_id=d1497a5f-35ca-4128-a3a8-8a1d7224c606 fwd="211.125.138.173" dyno=web.1 connect=1ms service=17ms status=206 bytes=353633
+2014-03-05T04:43:36.719215+00:00 heroku[router]: at=info method=GET path=/js/analytics.js host=terrace-house.takecian.com request_id=38343612-9522-4824-9ba2-56d7661fe8ae fwd="211.125.138.173" dyno=web.1 connect=1ms service=7ms status=304 bytes=237
+2014-03-05T04:43:37.099041+00:00 heroku[router]: at=info method=GET path=/css/style.css host=terrace-house.takecian.com request_id=d7be7633-1599-4564-9a8c-4a9e3836fc2c fwd="211.125.138.173" dyno=web.1 connect=1ms service=7ms status=200 bytes=1396
+2014-03-05T04:44:46.414955+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=POST path=/api/video/53168c625cfc0a7179bfd9e5 host=terrace-house.takecian.com request_id=72a13491-d446-4540-be74-eeed803ead48 fwd="211.125.138.172" dyno= connect= service= status=503 bytes=
+2014-03-05T04:44:51.190660+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/img/favicon.ico host=terrace-house.takecian.com request_id=ae656483-ca52-4b95-be0a-cc112a82ba01 fwd="211.125.138.198" dyno= connect= service= status=503 bytes=
+2014-03-05T04:44:53.431460+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=POST path=/api/video/53168c625cfc0a7179bfd9e4 host=terrace-house.takecian.com request_id=24d450ab-b5d9-4a03-a343-9d56a8106d38 fwd="211.125.138.172" dyno= connect= service= status=503 bytes=
+2014-03-05T04:43:36.330808+00:00 heroku[router]: at=info method=GET path=/ host=terrace-house.takecian.com request_id=d71a6de3-50f9-4cd8-9b2f-3b0e08b2fedd fwd="211.125.138.173" dyno=web.1 connect=1ms service=17ms status=200 bytes=7311
+2014-03-05T04:43:40.292591+00:00 heroku[router]: at=info method=GET path=/img/favicon.ico host=terrace-house.takecian.com request_id=fe8e3efe-ed8e-4e49-811c-a9259e92b3c8 fwd="211.125.138.170" dyno=web.1 connect=1ms service=4ms status=200 bytes=5964
+2014-03-05T04:44:44.224634+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/img/favicon.ico host=terrace-house.takecian.com request_id=60030e48-6a2a-4602-af9c-8e75fd4ad51a fwd="211.125.138.172" dyno= connect= service= status=503 bytes=
+2014-03-05T04:43:37.302241+00:00 heroku[router]: at=info method=GET path=/js/vendor/jquery/jquery.js host=terrace-house.takecian.com request_id=6282c36b-08df-4f85-9b45-f87b9c841234 fwd="211.125.138.170" dyno=web.1 connect=2ms service=3ms status=304 bytes=240
+2014-03-05T04:47:38.450205+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=POST path=/api/video/53168c625cfc0a7179bfd9e5 host=terrace-house.takecian.com request_id=d6167914-0381-4c48-b58a-6c8f39646b81 fwd="211.125.138.172" dyno= connect= service= status=503 bytes=
+2014-03-05T04:47:43.836870+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/img/favicon.ico host=terrace-house.takecian.com request_id=4c34e32f-3858-483e-b2b0-4dd5e649f97e fwd="211.125.138.172" dyno= connect= service= status=503 bytes=
