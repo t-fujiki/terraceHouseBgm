@@ -1,8 +1,8 @@
-var tag = document.createElement('script');
+// var tag = document.createElement('script');
 
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// tag.src = "https://www.youtube.com/iframe_api";
+// var firstScriptTag = document.getElementsByTagName('script')[0];
+// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var player;
 var isReady = false;
@@ -22,7 +22,7 @@ function onPlayerStateChange(event) {
     //     setTimeout(stopVideo, 6000);
     //     done = true;
     // }
-    if (event == 0) { // play completed
+    if (event.data == YT.PlayerState.ENDED) { // play completed
         var scope = angular.element($('#main')).scope().next();
     }
 }
@@ -124,6 +124,7 @@ var mainCtrl = function($scope, $http) {
     }
 
     function play(video) {
+        console.log("playing vid = " + video.vid);
         player.loadVideoById(video.vid, 5, "large")
         // var player = document.getElementById('player');
         $scope.currentVideo.status = "none";
