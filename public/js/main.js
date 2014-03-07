@@ -1,3 +1,45 @@
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '300',
+      width: '400',
+      videoId: 'oR6okRuOLc8',
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+    }
+});
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
+
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+var done = false;
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+      setTimeout(stopVideo, 6000);
+      done = true;
+  }
+}
+function stopVideo() {
+    player.stopVideo();
+}
+
 function playerState(state) {
     // console.log(state);
     if (state == 0) { // play completed
@@ -19,97 +61,98 @@ function toLocaleString(date) {
 }
 
 var mainCtrl = function($scope, $http) {
-        var current = 0;
-        var previousSortState = {
-            target: "date",
-            order: 0
-        };
+    var current = 0;
+    var previousSortState = {
+        target: "date",
+        order: 0
+    };
 
-        $scope.isRandom = false;
+    $scope.isRandom = false;
 
-        $scope.next = function() {
-            if ($scope.isRandom == true) {
-                playRandom();
-            } else {
-                playNext();
-            }
-        };
-
-        $scope.prev = function() {
-            if ($scope.isRandom == true) {
-                playRandom();
-            } else {
-                playPrev();
-            }
-        };
-
-        function playRandom() {
-            var nextIndex = 0;
-            nextIndex = Math.floor(Math.random() * $scope.videos.length + 1);
-            play($scope.videos[nextIndex]);
-            current = nextIndex;
-        };
-
-        function playNext() {
-            while(true){
-                current++;
-                if (current == $scope.videos.length) {
-                    current = 0;
-                }
-
-                if($scope.videos[current].date == $scope.date){
-                    play($scope.videos[current]);
-                    break;
-                }
-            }
-        };
-
-        function playPrev() {
-            while(true){
-                current--;
-                if (current < 0) {
-                    current = $scope.videos.length - 1;
-                }
-
-                if($scope.videos[current].date == $scope.date){
-                    play($scope.videos[current]);
-                    break;
-                }
-            }
-        };
-
-        function inc(video) {
-            $http.post('/api/video/' + video._id, {
-                params: {}
-            }).success(function(data, status, headers, config) {
-                console.log(data);
-                video.count = data[0].count;
-            }).
-            error(function(data, status, headers, config) {
-                console.log('error at get date:' + status);
-            });
+    $scope.next = function() {
+        if ($scope.isRandom == true) {
+            playRandom();
+        } else {
+            playNext();
         }
+    };
 
-        function play(video) {
-            var player = document.getElementById('player');
-            $scope.currentVideo.status = "none";
+    $scope.prev = function() {
+        if ($scope.isRandom == true) {
+            playRandom();
+        } else {
+            playPrev();
+        }
+    };
+
+    function playRandom() {
+        var nextIndex = 0;
+        nextIndex = Math.floor(Math.random() * $scope.videos.length + 1);
+        play($scope.videos[nextIndex]);
+        current = nextIndex;
+    };
+
+    function playNext() {
+        while(true){
+            current++;
+            if (current == $scope.videos.length) {
+                current = 0;
+            }
+
+            if($scope.videos[current].date == $scope.date){
+                play($scope.videos[current]);
+                break;
+            }
+        }
+    };
+
+    function playPrev() {
+        while(true){
+            current--;
+            if (current < 0) {
+                current = $scope.videos.length - 1;
+            }
+
+            if($scope.videos[current].date == $scope.date){
+                play($scope.videos[current]);
+                break;
+            }
+        }
+    };
+
+    function inc(video) {
+        $http.post('/api/video/' + video._id, {
+            params: {}
+        }).success(function(data, status, headers, config) {
+            console.log(data);
+            video.count = data[0].count;
+        }).
+        error(function(data, status, headers, config) {
+            console.log('error at get date:' + status);
+        });
+    }
+
+    function play(video) {
+        player.loadVideoById(video.vid, 5, "large")
+        // var player = document.getElementById('player');
+        $scope.currentVideo.status = "none";
+        $scope.currentVideo = video;
+        $scope.currentVideo.status = "playing";
+        // player.loadVideoById(video.vid);
+        inc(video);
+    }
+
+    function set(video) {
+            // var params = {
+            //     allowScriptAccess: "always"
+            // };
+            // var atts = {
+            //     id: "player"
+            // };
+
             $scope.currentVideo = video;
             $scope.currentVideo.status = "playing";
-            player.loadVideoById(video.vid);
-            inc(video);
-        }
-
-        function set(video) {
-            var params = {
-                allowScriptAccess: "always"
-            };
-            var atts = {
-                id: "player"
-            };
-
-            $scope.currentVideo = video;
-            $scope.currentVideo.status = "playing";
-            swfobject.embedSWF("http://www.youtube.com/v/" + video.vid + "?enablejsapi=1&playerapiid=ytplayer", "player", "400", "300", "8", null, null, params, atts);
+            // swfobject.embedSWF("http://www.youtube.com/v/" + video.vid + "?enablejsapi=1&playerapiid=ytplayer", "player", "400", "300", "8", null, null, params, atts);
             inc(video);
         }
 
@@ -234,11 +277,11 @@ var mainCtrl = function($scope, $http) {
                 if(previousSortState.order == 0){
                     options["sortAscending"] = true;
                     previousSortState.order = 1;
-                                console.log(options);
+                    console.log(options);
                 }else{
                     options["sortAscending"] = false;
                     previousSortState.order = 0;
-                                console.log(options);
+                    console.log(options);
                 }
             }else{
                 options["sortAscending"] = false;
