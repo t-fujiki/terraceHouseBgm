@@ -11,7 +11,7 @@ db.videos.insert(
 {
 	artist: "THE BLUE HEARTS",
 	title: "HAPPY BIRTHDAY",
-	vid: "x1Xj4TaT2Mc",
+	vid: "3gvFP62AN9Q",
 	date: ISODate("2013-08-16T09:00:00Z"),
 	category: "",
 }

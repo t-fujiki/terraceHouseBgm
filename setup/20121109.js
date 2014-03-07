@@ -27,7 +27,7 @@
 {
 	artist: "THE BLUE HEARTS",
 	title: "青空",
-	vid: "6ssiTuXTNnU",
+	vid: "d7yQHNntX4I",
 	date: ISODate("2012-11-09T09:00:00Z"),
 	category: "",
 }

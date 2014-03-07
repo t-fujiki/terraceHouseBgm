@@ -31,12 +31,12 @@ db.videos.insert(
 	date: ISODate("2013-09-13T09:00:00Z"),
 	category: "",
 }
-# ,
-# {
-# 	artist: "RADWIMPS",
-# 	title: "七ノ歌",
-# 	vid: "soAoGvyHy9M",
-# 	date: ISODate("2013-09-13T09:00:00Z"),
-# 	category: "",
-# } // TODO need to be replaced
+// ,
+// {
+// 	artist: "RADWIMPS",
+// 	title: "七ノ歌",
+// 	vid: "soAoGvyHy9M",
+// 	date: ISODate("2013-09-13T09:00:00Z"),
+// 	category: "",
+// } // TODO need to be replaced
 ]);

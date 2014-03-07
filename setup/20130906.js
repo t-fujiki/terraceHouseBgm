@@ -39,20 +39,20 @@ db.videos.insert(
 	date: ISODate("2013-09-06T09:00:00Z"),
 	category: "",
 }
-# ,
-# {
-# 	artist: "stina nordenstam",
-# 	title: "Another Story Girl",
-# 	vid: "QijfdFbfqN8",
-# 	date: ISODate("2013-09-06T09:00:00Z"),
-# 	category: "",
-# } // TODO need to be replaced
-# ,
-# {
-# 	artist: "GUNS N' ROSES",
-# 	title: "DON'T CRY",
-# 	vid: "zRIbf6JqkNc",
-# 	date: ISODate("2013-09-06T09:00:00Z"),
-# 	category: "",
-# } // TODO need to be replaced
+// ,
+// {
+// 	artist: "stina nordenstam",
+// 	title: "Another Story Girl",
+// 	vid: "QijfdFbfqN8",
+// 	date: ISODate("2013-09-06T09:00:00Z"),
+// 	category: "",
+// } // TODO need to be replaced
+// ,
+// {
+// 	artist: "GUNS N' ROSES",
+// 	title: "DON'T CRY",
+// 	vid: "zRIbf6JqkNc",
+// 	date: ISODate("2013-09-06T09:00:00Z"),
+// 	category: "",
+// } // TODO need to be replaced
 ]);

@@ -40,14 +40,14 @@ db.videos.insert(
 	category: "",
 }
 ,
-# {
-# 	artist: "OLD NICK aka DJ HASEBE",
-# 	title: "The Lazy Song",
-# 	vid: "",
-# 	date: ISODate("2013-11-11T09:00:00Z"),
-# 	category: "",
-# } // TODO vid not found
-# ,
+// {
+// 	artist: "OLD NICK aka DJ HASEBE",
+// 	title: "The Lazy Song",
+// 	vid: "",
+// 	date: ISODate("2013-11-11T09:00:00Z"),
+// 	category: "",
+// } // TODO vid not found
+// ,
 {
 	artist: "JACK JOHNSON",
 	title: "NEVER FADE",
@@ -64,14 +64,14 @@ db.videos.insert(
 	category: "",
 }
 ,
-{
-	artist: "朝本浩文",
-	title: "パレードのテーマ〜雨の夜",
-	vid: "",
-	date: ISODate("2013-11-11T09:00:00Z"),
-	category: "",
-}
-,
+// {
+// 	artist: "朝本浩文",
+// 	title: "パレードのテーマ〜雨の夜",
+// 	vid: "",
+// 	date: ISODate("2013-11-11T09:00:00Z"),
+// 	category: "",
+// }
+// ,
 {
 	artist: "primal scream",
 	title: "movin'on up",

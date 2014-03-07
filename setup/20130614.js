@@ -19,7 +19,7 @@
 {
 	artist: "Lisa Loeb & Nine Stories",
 	title: "Stay.",
-	vid: "DjqOlFvobTk",
+	vid: "ka9mCmx9Jhs",
 	date: ISODate("2013-06-14T09:00:00Z"),
 	category: "",
 }

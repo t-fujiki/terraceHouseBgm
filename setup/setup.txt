@@ -1,0 +1,26 @@
+mongo
+use terrace
+
+■Step from scratch
+
+yo express
+npm install mongoose --save
+
+bower install angular --save
+bower install jquery --save
+
+mongo localhost/terrace 20140303.sh
+
+■Index
+db.videos.stats()
+db.videos.ensureIndex({'date': 1,'vid': 1}, {unique: true, dropDups: true});
+
+db.videos.update({vid : "Ffey9tRmagg"},{$set: {vid : "EBwpMelH6Gg"}}, { multi: true });
+db.videos.update({vid : "6ssiTuXTNnU"},{$set: {vid : "d7yQHNntX4I"}}, { multi: true });
+db.videos.update({vid : "qCbgDKThHD8"},{$set: {vid : "zr3eFfLPjnc"}}, { multi: true });
+db.videos.update({vid : "x1Xj4TaT2Mc"},{$set: {vid : "3gvFP62AN9Q"}}, { multi: true });
+db.videos.update({vid : "DjqOlFvobTk"},{$set: {vid : "ka9mCmx9Jhs"}}, { multi: true });
+db.videos.update({vid : "aip7cl2x57g"},{$set: {vid : "xA6b6_CGnkg"}}, { multi: true });
+
+db.videos.find({"original_title":{$exists:false}})
+db.videos.count({"original_title":{$exists:true}})

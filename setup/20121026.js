@@ -35,7 +35,7 @@
 {
 	artist: "BUDDHA BRAND",
 	title: "人間発電所",
-	vid: "qCbgDKThHD8",
+	vid: "zr3eFfLPjnc",
 	date: ISODate("2012-10-26T09:00:00Z"),
 	category: "",
 }
