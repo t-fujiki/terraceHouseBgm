@@ -22,7 +22,7 @@ function onPlayerStateChange(event) {
     //     setTimeout(stopVideo, 6000);
     //     done = true;
     // }
-    if (state == 0) { // play completed
+    if (event == 0) { // play completed
         var scope = angular.element($('#main')).scope().next();
     }
 }
