@@ -90,7 +90,7 @@ var mainCtrl = function($scope, $http) {
                 current = 0;
             }
 
-            if ($scope.videos[current].date == $scope.date) {
+            if ($scope.date == 'all' || $scope.videos[current].date == $scope.date) {
                 play($scope.videos[current]);
                 break;
             }
@@ -104,7 +104,7 @@ var mainCtrl = function($scope, $http) {
                 current = $scope.videos.length - 1;
             }
 
-            if ($scope.videos[current].date == $scope.date) {
+            if ($scope.date == 'all' || $scope.videos[current].date == $scope.date) {
                 play($scope.videos[current]);
                 break;
             }
@@ -222,7 +222,7 @@ var mainCtrl = function($scope, $http) {
 
         $http.get('/api/video/date', {}).success(function(data, status, headers, config) {
             $scope.dates = [];
-            // $scope.dates.push("all"); //
+            $scope.dates.push("all"); //
             angular.forEach(data, function(value, key) {
                 // var date = new Date(value);
                 // $scope.dates.push(toLocaleString(date));
