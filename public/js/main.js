@@ -1,9 +1,3 @@
-// var tag = document.createElement('script');
-
-// tag.src = "https://www.youtube.com/iframe_api";
-// var firstScriptTag = document.getElementsByTagName('script')[0];
-// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
 var player;
 var isReady = false;
 
@@ -38,11 +32,6 @@ function playerState(state) {
     }
 }
 
-// function onYouTubePlayerReady(playerId) {
-//     var player = document.getElementById('player');
-//     player.addEventListener('onStateChange', 'playerState');
-//     player.playVideo();
-// }
 
 function toLocaleString(date) {
     var month = "0" + (date.getMonth() + 1);
@@ -90,7 +79,7 @@ var mainCtrl = function($scope, $http) {
                 current = 0;
             }
 
-            if ($scope.date == 'all' || $scope.videos[current].date == $scope.date) {
+            if ($scope.date == undefined || $scope.date == 'all' || $scope.videos[current].date == $scope.date) {
                 play($scope.videos[current]);
                 break;
             }
@@ -104,7 +93,7 @@ var mainCtrl = function($scope, $http) {
                 current = $scope.videos.length - 1;
             }
 
-            if ($scope.date == 'all' || $scope.videos[current].date == $scope.date) {
+            if ($scope.date == undefined || $scope.date == 'all' || $scope.videos[current].date == $scope.date) {
                 play($scope.videos[current]);
                 break;
             }
@@ -162,28 +151,28 @@ var mainCtrl = function($scope, $http) {
             options[key] = "*";
         }
         // parse 'false' as false boolean
-        setTimeout(function() {
-            $container.isotope(options);
-        }, 50)
+        // setTimeout(function() {
+        //     $container.isotope(options);
+        // }, 50)
     }
 
     $scope.setLayout = function() {
         console.log("[IN]setLayout");
         var $container = $('#container');
 
-        $container.isotope({
-            itemSelector: '.element',
-            getSortData: {
-                date: function($elem) {
-                    var date = $elem.attr('date');
-                    return date;
-                },
-                count: function($elem) {
-                    var count = parseInt($elem.attr('count'), 10);
-                    return count;
-                }
-            }
-        });
+        // $container.isotope({
+        //     itemSelector: '.element',
+        //     getSortData: {
+        //         date: function($elem) {
+        //             var date = $elem.attr('date');
+        //             return date;
+        //         },
+        //         count: function($elem) {
+        //             var count = parseInt($elem.attr('count'), 10);
+        //             return count;
+        //         }
+        //     }
+        // });
         console.log("[OUT]setLayout");
     };
 
@@ -222,13 +211,14 @@ var mainCtrl = function($scope, $http) {
 
         $http.get('/api/video/date', {}).success(function(data, status, headers, config) {
             $scope.dates = [];
-            $scope.dates.push("all"); //
+            // $scope.dates.push("all"); //
             angular.forEach(data, function(value, key) {
                 // var date = new Date(value);
                 // $scope.dates.push(toLocaleString(date));
                 $scope.dates.push(value);
             });
-            $scope.date = $scope.dates[0];
+            $scope.query = {};
+            $scope.query.date = "";
             showVideos($scope.date);
 
         }).error(function(data, status, headers, config) {
@@ -282,7 +272,7 @@ var mainCtrl = function($scope, $http) {
         }
         previousSortState.target = value
         // parse 'false' as false boolean
-        $container.isotope(options);
+        // $container.isotope(options);
 
     }
 

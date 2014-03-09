@@ -49,7 +49,7 @@ body {
 }
 
 .videoimg {
-    width: 100%;
+  max-width: 100%;
 }
 
 .playing {
@@ -84,4 +84,17 @@ img.videoimg {
 
 .control{
     margin : auto;
+}
+
+.hover-bottom {
+position: absolute;
+top: 140px;
+height: 50px;
+background-color: #FFFFFF;
+filter: alpha(opacity=85);
+-moz-opacity: 0.85;
+-khtml-opacity: 0.85;
+opacity: 0.85;
+width: 100%;
+white-space: nowrap;
 }

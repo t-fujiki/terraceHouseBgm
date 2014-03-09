@@ -15,7 +15,7 @@
 	<title>テラスハウス BGM まとめ</title>
 	<link rel="shortcut icon" href="img/favicon.ico">
 
-	<link rel="stylesheet" href="css/isotope.css">
+  <link rel="stylesheet" href="css/isotope.css">
 	<link rel="stylesheet" href="css/foundation.css">
 	<link rel="stylesheet" href="css/style.css">
 
@@ -23,7 +23,6 @@
 	<script type="text/javascript" src="js/analytics.js"></script>
 	<script type="text/javascript" src="js/vendor/angular/angular.js"></script>
 	<script type="text/javascript" src="js/vendor/jquery/jquery.js"></script>
-	<script type="text/javascript" src="js/vendor/jquery.isotope.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
 	<script src="js/vendor/modernizr.js"></script>
@@ -53,7 +52,7 @@
 			<div class="large-12 medium-12 columns">
 				<div class="page-header">
 					<div class="header-description">
-					フジテレビ系列で放送されている「テラスハウス」の BGM をまとめてみました。	
+					フジテレビ系列で放送されている「テラスハウス」の BGM をまとめてみました。
 					</div>
 					<div class="button_google">
 						<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script><g:plusone></g:plusone>
@@ -90,8 +89,10 @@
 				<ul class="nav navbar-nav" id="commenu">
 					<li><p class="menutitle">放送日時から選択</p></li>
 					<li class="padding-15">
-						<select id="date-area" ng-model="date" ng-options="date for date in dates" ng-change="dateSelected($date)">
-							<option value="all">-- choose date --</option>
+
+						<select id="date-area" ng-model="query.date" ng-change="dateSelected($date)">
+							<option value="">all</option>
+							<option ng-repeat="date in dates" value="{{date}}">{{date}}</option>
 						</select>
 					</li>
 				</ul>
@@ -108,11 +109,13 @@
 		</div>
 		<div class="row">
 			<div id="container" class="large-12 medium-12 columns isotope">
-					<div ng-repeat="video in videos" class="element isotope-item {{video.date}} {{video.status}}" date="{{video.date}}" count="{{video.count}}" ng-click="select($event)" >
+					<div ng-repeat="video in videos | filter:query" class="large-3 medium-3 element isotope-item {{video.date}} {{video.status}}" date="{{video.date}}" count="{{video.count}}" ng-click="select($event)" >
 <!-- 						<p>放送日時: {{video.date}}</p> -->
-						<img src="{{video.thumbnail}}" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
-						<p>{{video.artist}} 再生回数: {{video.count}}</p>
-						<p>「{{video.title}}」</p>
+						<img src="{{video.thumbnail}}" ng-click="select($event)" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
+						<div class="hover-bottom">
+							<p>{{video.artist}} 再生回数: {{video.count}}</p>
+							<p>「{{video.title}}」</p>
+						</div>
 					</div>
 <!-- 				<ul class="vertical-slide">
 					<li ng-repeat="video in videos" class="span2">
