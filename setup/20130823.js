@@ -3,7 +3,6 @@ db.videos.insert(
 {
 	artist: "Rhye",
 	title: "Open",
-	img: "http://www.youtube.com/watch?v=sng_CdAAw8M",
 	vid: "sng_CdAAw8M",
 	date: ISODate("2013-08-23T09:00:00Z"),
 	category: ""
