@@ -108,35 +108,17 @@
 			</div><!--/.nav-collapse -->
 		</div>
 		<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6">
-			<li ng-repeat="video in videos | filter:query" class="large-3 medium-3 element isotope-item {{video.date}} {{video.status}}" date="{{video.date}}" count="{{video.count}}" ng-click="select($event)" >
+			<li ng-repeat="video in videos | filter:query" class="element isotope-item {{video.date}} {{video.status}}" date="{{video.date}}" count="{{video.count}}" >
+				<div>
 <!-- 						<p>放送日時: {{video.date}}</p> -->
-						<img src="{{video.thumbnail}}" ng-click="select($event)" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
-						<div class="hover-bottom">
-							<p>{{video.artist}} 再生回数: {{video.count}}</p>
-							<p>「{{video.title}}」</p>
-						</div>
-					</li>
-		</ul>
-		<div class="row">
-			<div id="container" class="large-12 medium-12 columns isotope">
-<!-- 					<div ng-repeat="video in videos | filter:query" class="large-3 medium-3 element isotope-item {{video.date}} {{video.status}}" date="{{video.date}}" count="{{video.count}}" ng-click="select($event)" >
- 						<p>放送日時: {{video.date}}</p>
-						<img src="{{video.thumbnail}}" ng-click="select($event)" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
-						<div class="hover-bottom">
-							<p>{{video.artist}} 再生回数: {{video.count}}</p>
-							<p>「{{video.title}}」</p>
-						</div>
-					</div> -->
-<!-- 				<ul class="vertical-slide">
-					<li ng-repeat="video in videos" class="span2">
-						<p>{{video.artist}}</p>
+					<img src="{{video.thumbnail}}" ng-click="select($event)" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
+					<div class="hover-bottom">
+						<p>{{video.artist}} 再生回数: {{video.count}}</p>
 						<p>「{{video.title}}」</p>
-						<img src="{{video.thumbnail}}" ng-click="select($event)" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
-						<p>放送日時: {{video.date}}</p>
-					</li>
-				</ul>
- -->		</div>
- 		</div>
+					</div>
+				</div>
+			</li>
+		</ul>
 </div><!-- mainCtrl -->
 <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 <script src="js/foundation.min.js"></script>

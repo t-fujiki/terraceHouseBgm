@@ -88,11 +88,12 @@ img.videoimg {
 
 .element{
     margin: 0px;
+    padding: 0px;
 }
 
 .hover-bottom {
-position: absolute;
-top: 140px;
+/*position: absolute;
+top: 140px;*/
 height: 50px;
 background-color: #FFFFFF;
 filter: alpha(opacity=85);

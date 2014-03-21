@@ -38,12 +38,6 @@ function playerState(state) {
     }
 }
 
-// function onYouTubePlayerReady(playerId) {
-//     var player = document.getElementById('player');
-//     player.addEventListener('onStateChange', 'playerState');
-//     player.playVideo();
-// }
-
 function toLocaleString(date) {
     var month = "0" + (date.getMonth() + 1);
     var day = "0" + date.getDate();
