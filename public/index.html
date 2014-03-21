@@ -107,16 +107,26 @@
 				</div> -->
 			</div><!--/.nav-collapse -->
 		</div>
-		<div class="row">
-			<div id="container" class="large-12 medium-12 columns isotope">
-					<div ng-repeat="video in videos | filter:query" class="large-3 medium-3 element isotope-item {{video.date}} {{video.status}}" date="{{video.date}}" count="{{video.count}}" ng-click="select($event)" >
+		<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6">
+			<li ng-repeat="video in videos | filter:query" class="large-3 medium-3 element isotope-item {{video.date}} {{video.status}}" date="{{video.date}}" count="{{video.count}}" ng-click="select($event)" >
 <!-- 						<p>放送日時: {{video.date}}</p> -->
 						<img src="{{video.thumbnail}}" ng-click="select($event)" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
 						<div class="hover-bottom">
 							<p>{{video.artist}} 再生回数: {{video.count}}</p>
 							<p>「{{video.title}}」</p>
 						</div>
-					</div>
+					</li>
+		</ul>
+		<div class="row">
+			<div id="container" class="large-12 medium-12 columns isotope">
+<!-- 					<div ng-repeat="video in videos | filter:query" class="large-3 medium-3 element isotope-item {{video.date}} {{video.status}}" date="{{video.date}}" count="{{video.count}}" ng-click="select($event)" >
+ 						<p>放送日時: {{video.date}}</p>
+						<img src="{{video.thumbnail}}" ng-click="select($event)" vid="{{video.vid}}" class="videoimg" index="{{video.index}}" />
+						<div class="hover-bottom">
+							<p>{{video.artist}} 再生回数: {{video.count}}</p>
+							<p>「{{video.title}}」</p>
+						</div>
+					</div> -->
 <!-- 				<ul class="vertical-slide">
 					<li ng-repeat="video in videos" class="span2">
 						<p>{{video.artist}}</p>
@@ -126,8 +136,6 @@
 					</li>
 				</ul>
  -->		</div>
-<!-- 		</div>
- -->
  		</div>
 </div><!-- mainCtrl -->
 <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
