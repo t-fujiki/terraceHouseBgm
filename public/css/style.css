@@ -91,6 +91,10 @@ img.videoimg {
     padding: 0px;
 }
 
+.date{
+    color: white;
+}
+
 .hover-bottom {
 /*position: absolute;
 top: 140px;*/

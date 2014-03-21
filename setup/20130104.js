@@ -27,7 +27,7 @@
 {
 	artist: "THE HIGH-LOWS",
 	title: "日曜日よりの使者",
-	vid: "Eqs9MibvnlA",
+	vid: "9TSFEG9luos",
 	date: ISODate("2013-01-04T09:00:00Z"),
 	category: "",
 }
