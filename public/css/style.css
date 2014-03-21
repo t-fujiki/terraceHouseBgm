@@ -86,6 +86,10 @@ img.videoimg {
     margin : auto;
 }
 
+.element{
+    margin: 0px;
+}
+
 .hover-bottom {
 position: absolute;
 top: 140px;
