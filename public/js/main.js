@@ -6,6 +6,7 @@
 
 var player;
 var isReady = false;
+var ALL = "all";
 
 function onYouTubeIframeAPIReady() {
     isReady = true;
@@ -84,7 +85,7 @@ var mainCtrl = function($scope, $http) {
                 current = 0;
             }
 
-            if ($scope.date == 'all' || $scope.videos[current].date == $scope.date) {
+            if ($scope.query == undefined || $scope.query.date == ALL || $scope.videos[current].date == $scope.query.date) {
                 play($scope.videos[current]);
                 break;
             }
@@ -98,7 +99,7 @@ var mainCtrl = function($scope, $http) {
                 current = $scope.videos.length - 1;
             }
 
-            if ($scope.date == 'all' || $scope.videos[current].date == $scope.date) {
+            if ($scope.query == undefined || $scope.query.date == ALL || $scope.videos[current].date == $scope.query.date) {
                 play($scope.videos[current]);
                 break;
             }
@@ -144,22 +145,22 @@ var mainCtrl = function($scope, $http) {
         inc(video);
     }
 
-    function filter(date) {
-        var $container = $('#container');
-        var options = {},
+    // function filter(date) {
+    //     var $container = $('#container');
+    //     var options = {},
 
-            key = "filter";
-        value = date;
-        if (value != "all") {
-            options[key] = '.' + value;
-        } else {
-            options[key] = "*";
-        }
-        // parse 'false' as false boolean
-        setTimeout(function() {
-            $container.isotope(options);
-        }, 50)
-    }
+    //         key = "filter";
+    //     value = date;
+    //     if (value != ALL) {
+    //         options[key] = '.' + value;
+    //     } else {
+    //         options[key] = "*";
+    //     }
+    //     // // parse 'false' as false boolean
+    //     // setTimeout(function() {
+    //     //     $container.isotope(options);
+    //     // }, 50)
+    // }
 
     $scope.setLayout = function() {
         console.log("[IN]setLayout");
@@ -201,9 +202,9 @@ var mainCtrl = function($scope, $http) {
             set($scope.videos[nextIndex]);
             current = nextIndex;
 
-            if ($scope.date != undefined) {
-                filter($scope.date);
-            }
+            // if ($scope.date != undefined) {
+            //     filter($scope.date);
+            // }
         }).
         error(function(data, status, headers, config) {
             console.log('error at get list:' + status);
@@ -221,7 +222,8 @@ var mainCtrl = function($scope, $http) {
                 // $scope.dates.push(toLocaleString(date));
                 $scope.dates.push(value);
             });
-            $scope.date = $scope.dates[0];
+
+            $scope.date = ALL;
             showVideos($scope.date);
 
         }).error(function(data, status, headers, config) {
@@ -238,10 +240,10 @@ var mainCtrl = function($scope, $http) {
     }
 
     $scope.dateSelected = function($date) {
-        if ($scope.date != undefined) {
-            // showVideos($scope.date);
-            filter($scope.date)
-        }
+        // if ($scope.date != undefined) {
+        //     // showVideos($scope.date);
+        //     filter($scope.date)
+        // }
     }
 
     $scope.sort = function($event) {
