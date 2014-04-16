@@ -41,6 +41,7 @@ mongoose.connect(uri);
 
 app.get('/api/video/list', video.list);
 app.get('/api/video/date', video.date);
+app.get('/api/video/artists', video.artists);
 app.post('/api/video/:id', video.update);
 
 http.createServer(app).listen(app.get('port'), function(){

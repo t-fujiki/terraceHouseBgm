@@ -123,6 +123,29 @@ function findDate(req, res) {
     console.log('[OUT]findDate');
 }
 
+function findArtists(req, res) {
+    console.log('[IN]findArtists');
+
+    Video.distinct("artist").sort({
+        date: 1
+    }).exec(function(err, result) {
+        if (!err) {
+            // console.log('success to get date. = ' + result);
+            var dateArray = new Array();
+            result.forEach(function(artist) {
+                dateArray.push(artist);
+            });
+            // console.log('Before:' + dateArray);
+            dateArray.sort();
+            // console.log('After:' + dateArray);
+            res.send(dateArray);
+        } else {
+            console.log('fail to get artists.');
+        }
+    });
+    console.log('[OUT]findArtists');
+}
+
 function update(req, res) {
     console.log('[IN]update, id = ' + req.params.id);
 
@@ -144,7 +167,7 @@ function update(req, res) {
                     res.send(result);
                 }else{
                     console.log("NG, " + err);
-                    res.send({});                    
+                    res.send({});
                 }
             });
         } else {
@@ -172,7 +195,16 @@ exports.list = function(req, res) {
             $lt: lt_date
         };
     }
+    var artist = req.query.artist;
+    if(artist){
+        console.log('artist:' + artist);
+        condition.artist = artist;
+    }
     findVideos(condition, req, res);
+};
+
+exports.artists = function(req, res){
+    findArtists(req, res);
 };
 
 exports.date = function(req, res) {
