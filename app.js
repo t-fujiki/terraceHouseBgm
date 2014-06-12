@@ -11,7 +11,7 @@ var express = require('express')
 var app = express();
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 3001);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
@@ -37,7 +37,7 @@ app.get('/google6545b9b2dd775c84.html', function(req, res) {
 
 var mongoose = require('mongoose');
 var uri = process.env.MONGOHQ_URL || 'mongodb://localhost/terrace';
-mongoose.connect(uri); 
+mongoose.connect(uri);
 
 app.get('/api/video/list', video.list);
 app.get('/api/video/date', video.date);
